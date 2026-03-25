@@ -1,0 +1,573 @@
+:::hero
+title: "Guía de Práctico: Impedanciometría"
+author: "Complemento al práctico de TM Cristina Vargas Bustamante"
+version: 1.0
+date: 2026-03
+subject: "Audiología Clínica — Laboratorio"
+level: "Pregrado en Tecnología Médica ORL"
+unit: "Práctico de Evaluación del Oído Medio"
+- Protocolo de ejecución con equipo
+- Técnica de colocación de la sonda
+- Secuencia de pruebas: timpanograma, reflejo, decay, función tubaria
+- Ejercicios de interpretación con casos clínicos
+- Llenado del formulario de impedanciometría
+:::
+
+# Guía de Práctico: Impedanciometría
+
+:::objective id="obj-practico"
+- Ejecutar correctamente el protocolo completo de impedanciometría (timpanograma, umbral del reflejo acústico, deterioro del reflejo y función tubaria) utilizando el impedanciómetro clínico con técnica adecuada de colocación de la sonda.
+- Registrar los resultados obtenidos en el formulario clínico de impedanciometría, identificando y consignando todos los parámetros cuantitativos relevantes.
+- Interpretar casos clínicos simulados integrando timpanograma, patrón de reflejos acústicos y función tubaria, formulando una correlación clínica fundamentada.
+:::
+
+---
+
+## PARTE I: Protocolo de Ejecución con Equipo
+
+### Preparación Previa al Examen
+
+Antes de iniciar la evaluación con el paciente, es fundamental verificar las condiciones del equipo y del espacio de trabajo. Un examen mal preparado puede generar artefactos que se confundan con patología real, lo que representa un error clínico evitable.
+
+---
+
+:::key-concept id="kc-preparation"
+La impedanciometría no requiere cabina sonoamortiguada (a diferencia de la audiometría), ya que los estímulos se presentan a niveles superiores al ruido ambiental mediante sonda oclusiva. Sin embargo, sí se requiere un espacio limpio, bien iluminado, con acceso a lavado de manos y suministro eléctrico estable.
+:::
+
+---
+
+:::example id="ex-checklist-pre" title="Checklist de preparación antes del primer paciente del día"
+**Equipo:**
+
+1. Encender el impedanciómetro y esperar la inicialización completa del sistema.
+2. Verificar calibración diaria con las cavidades de prueba (0.5, 2.0 y 5.0 cm³ si están disponibles; o según el protocolo del fabricante). Registrar los valores obtenidos y comparar con los valores esperados.
+3. Verificar que la bomba de presión funcione correctamente (debe generar presión positiva y negativa sin ruidos anormales ni fugas).
+4. Revisar que los cables de la sonda y el auricular contralateral estén en buen estado (sin cortes, dobleces agudos ni conectores flojos).
+5. Disponer de olivas (tips) de diferentes tamaños: al menos 3 tamaños para adultos y 2 para niños.
+
+**Insumos:**
+- Olivas nuevas o esterilizadas para cada paciente
+- Otoscopio con espéculos limpios
+- Toallas de papel o pañuelos desechables
+- Gel desinfectante o acceso a lavamanos
+- Formularios de impedanciometría impresos
+
+**Espacio:**
+- Silla cómoda para el paciente (sin ruedas idealmente, para evitar movimiento)
+- Mesa o superficie para el equipo al alcance del examinador
+- Iluminación adecuada para otoscopia
+:::
+
+---
+
+### Otoscopia Previa
+
+La otoscopia es un paso obligatorio antes de la impedanciometría. No es un paso opcional ni una formalidad.
+
+---
+
+:::warning id="warn-otoscopy-mandatory"
+Nunca se debe colocar la sonda del impedanciómetro sin haber realizado primero una otoscopia. Las razones son: (1) cerumen impactado puede bloquear la sonda y generar un timpanograma plano falso; (2) una perforación timpánica no detectada invalida la timpanometría convencional; (3) drenaje activo (otorrea) contraindica la inserción de la sonda por riesgo de contaminación cruzada y daño al equipo; (4) cuerpos extraños en el conducto pueden dañar la sonda o generar artefactos.
+:::
+
+---
+
+:::example id="ex-otoscopy-protocol" title="Protocolo de otoscopia previa a la impedanciometría"
+1. Seleccionar el espéculo del otoscopio adecuado al diámetro del conducto del paciente.
+2. Traccionar el pabellón auricular: hacia arriba y hacia atrás en adultos y niños mayores; hacia abajo y hacia atrás en lactantes.
+3. Observar y documentar:
+   - **Conducto auditivo externo**: presencia de cerumen (estimar porcentaje de obstrucción), exostosis, cuerpos extraños, drenaje, inflamación.
+   - **Membrana timpánica**: integridad (intacta o perforada — describir ubicación y tamaño de la perforación), coloración (nacarada normal, eritematosa, opaca, amarillenta), posición (neutra, retraída, abombada), presencia de nivel hidroaéreo, tubos de ventilación (permeable u ocluido), cicatrices, áreas monoméricas.
+4. Registrar los hallazgos en la sección de observaciones del formulario.
+5. **Decisión clínica post-otoscopia**:
+   - Conducto libre y TM intacta → Proceder con protocolo completo
+   - Cerumen <50% sin obstrucción de la vía hacia la TM → Proceder con precaución; anotar que el volumen puede estar subestimado
+   - Cerumen >50% o impactado → Derivar para extracción antes de la impedanciometría
+   - Otorrea activa → No realizar impedanciometría; derivar a evaluación médica
+   - Perforación visible → Realizar solo test de Bortnick si se requiere función tubaria; no realizar timpanometría convencional
+   - Tubo de ventilación → Verificar permeabilidad; proceder según protocolo de tímpano perforado si está permeable
+:::
+
+---
+
+### Selección y Colocación de la Oliva
+
+La obtención de un sello hermético adecuado es el factor técnico más determinante para la calidad de los resultados. Un sello inadecuado es la causa más frecuente de artefactos y mediciones fallidas en la práctica clínica.
+
+---
+
+:::example id="ex-tip-selection" title="Selección del tamaño de oliva"
+**Principio**: La oliva debe ser lo suficientemente grande para crear un sello hermético sin causar incomodidad. Si es demasiado pequeña, habrá fuga de aire y el equipo no podrá mantener la presión. Si es demasiado grande, causará dolor al paciente y posible trauma del conducto.
+
+**Método de selección**:
+1. Examinar el tamaño del conducto durante la otoscopia (aprovechar ese momento para estimar).
+2. Seleccionar una oliva que visualmente cubra aproximadamente ⅔ del diámetro del conducto.
+3. En caso de duda, comenzar con un tamaño intermedio. Si el equipo indica fuga (no logra presurizar), cambiar a un tamaño mayor.
+
+**Tamaños orientativos**:
+- Adultos: generalmente tamaño mediano a grande
+- Niños escolares: mediano
+- Preescolares: pequeño a mediano
+- Lactantes: tamaño especial para lactantes (disponible según fabricante)
+:::
+
+---
+
+:::example id="ex-probe-placement" title="Técnica de colocación de la sonda paso a paso"
+1. Colocar la oliva seleccionada en la punta de la sonda del impedanciómetro, verificando que quede firme y sin holgura.
+2. Informar al paciente: "Voy a colocar una pequeña pieza en su oído. Sentirá una leve presión y escuchará un sonido continuo. Es importante que permanezca quieto, no hable, no mastique y no trague durante la medición".
+3. Con la mano no dominante, traccionar suavemente el pabellón auricular (misma técnica que para otoscopia) para enderezar el conducto.
+4. Con la mano dominante, insertar la sonda con un movimiento suave y firme, dirigiéndola ligeramente hacia adelante y abajo, siguiendo la dirección natural del conducto.
+5. Soltar el pabellón y verificar que la sonda se mantiene en posición sin sostenerla manualmente.
+6. Observar en la pantalla del equipo el indicador de sello:
+   - **Sello correcto**: el equipo indica "ready", el volumen se estabiliza en un valor razonable (0.5–2.5 cm³ en adultos), y la presurización comienza sin problemas.
+   - **Fuga de aire**: el equipo no logra presurizar, el volumen aparece inestable o excesivamente alto, o el equipo indica error de sello. → Retirar, verificar oliva, reinsertar con mejor ángulo o cambiar tamaño.
+   - **Sonda bloqueada**: el volumen aparece extremadamente bajo (<0.3 cm³ en adultos) y la curva es plana. → Retirar, verificar que la punta no esté obstruida por cerumen, reinsertar con diferente ángulo.
+7. Una vez confirmado el sello, iniciar la medición.
+:::
+
+---
+
+:::warning id="warn-common-errors"
+**Errores frecuentes en la colocación de la sonda**:
+
+- **Insertar demasiado profundo**: puede causar dolor, reflejo de tos vagal (por estimulación del ramo auricular del vago), o contacto directo con la pared del conducto generando volumen falsamente bajo.
+- **Insertar demasiado superficial**: sello insuficiente, fuga de aire constante.
+- **No traccionar el pabellón**: el conducto queda curvado y la sonda se angula contra la pared, bloqueando uno o más conductos de la punta.
+- **Paciente hablando o masticando**: genera artefactos de movimiento que simulan cambios de admitancia, pudiendo contaminar tanto el timpanograma como el registro del reflejo.
+- **Oliva de tamaño inadecuado**: la causa más común de repetición de pruebas. Si el sello se pierde a mitad de la medición, todos los valores son inválidos.
+:::
+
+---
+
+### Secuencia de Pruebas
+
+Una vez logrado el sello hermético, las pruebas se realizan en un orden específico que optimiza el tiempo y la calidad de la información obtenida. La secuencia es importante porque cada prueba informa la decisión de realizar la siguiente.
+
+---
+
+:::key-concept id="kc-sequence"
+La secuencia recomendada es: (1) Timpanograma → (2) Umbral del reflejo acústico → (3) Deterioro del reflejo acústico (si corresponde) → (4) Función tubaria (si corresponde). Cada paso depende del resultado del anterior.
+:::
+
+---
+
+### Paso 1: Timpanograma
+
+:::example id="ex-tympanometry-protocol" title="Ejecución del timpanograma"
+1. Seleccionar el modo de timpanometría en el equipo (generalmente 226 Hz para pacientes >6 meses; 1000 Hz para lactantes <4-6 meses).
+2. Iniciar la medición. El equipo presuriza el conducto (generalmente desde +200 daPa) y barre hasta presiones negativas (generalmente –400 daPa), registrando la admitancia en cada punto.
+3. El proceso toma aproximadamente 3-5 segundos por oído.
+4. Observar la curva resultante en la pantalla y verificar que sea una medición limpia (sin artefactos de movimiento ni interrupciones).
+5. Si la curva presenta irregularidades o el equipo reporta error, repetir la medición tras verificar el sello.
+6. **Registrar en el formulario**: volumen (ml), presión del pico (daPa), compliance (ml), gradiente, y clasificar la curva (A, AS, AD, B, C, Cs, P, D, E).
+7. Repetir todo el procedimiento en el otro oído.
+
+**Decisión post-timpanograma**:
+- Curva A, AS, AD, C → Proceder al reflejo acústico
+- Curva B → Registrar el Vea para diagnóstico diferencial (OME vs perforación vs cerumen). No se espera obtener reflejos con sonda en este oído. Evaluar reflejos solo si se requiere información del oído contralateral.
+:::
+
+---
+
+### Paso 2: Umbral del Reflejo Acústico
+
+:::example id="ex-asr-protocol" title="Ejecución del umbral del reflejo acústico"
+1. El equipo mantiene la presión del conducto en la TPP (presión del pico timpanométrico) para optimizar la detección del reflejo.
+2. Seleccionar la condición de medición: comenzar con **ipsilateral** de cada oído y luego **contralateral** de cada oído (4 condiciones totales).
+3. Para cada condición, seleccionar el activador (comenzar por 1000 Hz):
+   - Iniciar en un nivel moderado (ejemplo: 80 dB HL para pacientes con audición normal).
+   - Presentar el activador. Observar si se produce un cambio de admitancia ≥0.02 mmho sincronizado con el estímulo.
+   - Si no hay respuesta, aumentar en pasos de 5 dB.
+   - Si hay respuesta, verificar con una segunda presentación (reproducibilidad).
+   - Confirmar con un nivel 5 dB superior (debe haber crecimiento de amplitud).
+   - Verificar que no hay respuesta 5 dB por debajo del umbral estimado.
+   - **No superar 105 dB HL** como nivel máximo del activador.
+4. Repetir para los demás activadores (500, 2000, 4000 Hz y WN/BBN).
+5. **Registrar en el formulario**: umbral en dB HL por frecuencia para cada condición. Si ausente al máximo, anotar "AUS" o "NR".
+6. Identificar el patrón resultante: diagonal, vertical, L invertida, horizontal, unibox, o normal.
+:::
+
+---
+
+:::note id="note-asr-tips"
+**Consejos prácticos para la obtención del reflejo**:
+
+- Si el paciente está muy tenso o no se relaja, los artefactos musculares pueden simular o enmascarar el reflejo. Pedir al paciente que respire tranquilamente y se relaje.
+- Si hay muchos artefactos de deglución, pedir al paciente que trague una vez y luego permanezca lo más quieto posible.
+- En condición ipsilateral, la interacción entre la sonda (226 Hz) y el activador puede generar artefactos especialmente con activadores de baja frecuencia (500 Hz). Evaluar con precaución.
+- Si el timpanograma es tipo B en un oído, no perder tiempo buscando reflejos ipsilaterales de ese oído (no se obtendrán). Concentrarse en las condiciones que aporten información clínica.
+:::
+
+---
+
+### Paso 3: Deterioro del Reflejo Acústico (Condicional)
+
+:::example id="ex-decay-protocol" title="Ejecución del deterioro del reflejo acústico"
+**Indicación**: Realizar solo cuando existe sospecha de patología retrococlear (tinnitus permanente, hipoacusia asimétrica con reflejos presentes, sospecha clínica de schwannoma).
+
+**Procedimiento**:
+1. Seleccionar el modo de deterioro/decay del reflejo en el equipo.
+2. Seleccionar la frecuencia: comenzar con **1000 Hz**.
+3. Establecer el nivel del activador a **10 dB SL sobre el umbral del reflejo** (ejemplo: si umbral del reflejo a 1000 Hz = 85 dB HL → presentar a 95 dB HL). **No superar 115 dB HL bajo ninguna circunstancia**.
+4. Presentar el activador durante **10 segundos** continuos.
+5. Observar en la pantalla si la amplitud del reflejo se mantiene o decae:
+   - **Normal (negativo)**: la amplitud se mantiene ≥50% de su valor inicial durante los 10 segundos.
+   - **Positivo (+)**: decae <50% en los primeros 5 segundos a ambas frecuencias → no significativo.
+   - **Positivo (++)**: decae ≥50% en 5 segundos a 1000 Hz pero no a 500 Hz → cuestionable.
+   - **Positivo (+++)**: decae ≥50% en 5 segundos a 500 Hz y 1000 Hz → signo claro de patología retrococlear.
+6. Repetir con **500 Hz** al mismo nivel relativo (10 dB SL sobre el umbral del reflejo a 500 Hz).
+7. **Registrar en el formulario**: resultado para FONO OI y FONO OD a 500 Hz y 1000 Hz.
+
+**Criterios adicionales de la presentación**: A 500 Hz, una disminución >33.3% en los primeros 5 segundos también se considera patológica.
+:::
+
+---
+
+:::warning id="warn-decay-safety"
+El deterioro del reflejo acústico es la prueba con mayor riesgo de daño iatrogénico de toda la impedanciometría. Se ha documentado pérdida auditiva permanente tras presentación del activador a 120 dB HL durante 10 segundos. Siempre verificar que el nivel no supere 115 dB HL. Si el umbral del reflejo ya está en 105 dB HL, el nivel de decay sería 115 dB HL (límite máximo). Si el umbral del reflejo supera 105 dB HL, la prueba de decay NO se puede realizar.
+:::
+
+---
+
+### Paso 4: Función Tubaria (Condicional)
+
+:::example id="ex-ft-protocol" title="Selección y ejecución del protocolo de función tubaria"
+**Paso previo obligatorio**: Determinar el estado de la membrana timpánica según la otoscopia.
+
+**Opción A — Tímpano intacto (variación de presión)**:
+Requisito: Timpanograma basal tipo A.
+
+1. Registrar primer timpanograma (basal). Verificar curva A. Si no es A → protocolo no es válido.
+2. Pedir al paciente que trague (deglución simple o maniobra de Toynbee: tragar con nariz tapada).
+3. Registrar segundo timpanograma inmediatamente después.
+4. Esperar y observar si hay variación del pico hacia presiones negativas.
+5. Pedir al paciente que realice maniobra de Valsalva (soplar suavemente con nariz y boca cerradas).
+6. Registrar tercer timpanograma.
+7. Observar si hay variación del pico hacia presiones positivas.
+8. **Criterio de normalidad**: variación de 10-15 daPa tras cada maniobra.
+
+**Opción B — Tímpano perforado (test de Bortnick)**:
+Requisito: Perforación o tubo de ventilación permeable confirmado por otoscopia.
+
+1. Colocar la sonda y lograr sello hermético en el conducto.
+2. **Fase 1 (presión negativa)**: Instilar –200 daPa. Observar si compensa espontáneamente hacia 0. Si no compensa espontáneamente, pedir maniobra de **Valsalva**. Registrar el valor final alcanzado.
+3. **Fase 2 (presión positiva)**: Instilar +200 daPa. Observar si compensa espontáneamente. Si no, pedir **degluciones** sucesivas. Registrar el valor final alcanzado.
+4. **Registrar en el formulario**: valores a +200 y –200 daPa para cada oído. Marcar "T. perforado".
+
+**Interpretación Bortnick**:
+- Buena función: compensa hasta 0 daPa en ambas fases
+- Función regular: compensa parcialmente (no llega a 0)
+- Mala función: no compensa ni con maniobras
+:::
+
+---
+
+### Finalización del Examen
+
+:::example id="ex-finalization" title="Pasos finales tras completar las mediciones"
+1. Retirar la sonda suavemente del conducto auditivo.
+2. Descartar la oliva usada (si es desechable) o colocarla en el recipiente para esterilización.
+3. Limpiar la punta de la sonda con un paño o toalla desechable. No sumergir la sonda en líquido.
+4. Si se evaluaron ambos oídos, verificar que el formulario esté completo para OD y OI.
+5. Revisar el formulario completo antes de que el paciente se retire:
+   - Timpanograma: ¿están los 4 valores y la clasificación de curva para cada oído?
+   - Reflejo acústico: ¿están las 4 condiciones con umbrales o "AUS" por frecuencia?
+   - Decay: ¿se completó si estaba indicado?
+   - Función tubaria: ¿se completó si estaba indicada?
+   - Observaciones: ¿se registraron los hallazgos de otoscopia?
+6. Agradecer al paciente y explicarle brevemente los hallazgos principales si corresponde.
+7. Apagar el equipo al final de la jornada (o según protocolo del laboratorio).
+:::
+
+---
+
+## PARTE II: Ejercicios de Interpretación con Casos Clínicos
+
+A continuación se presentan 8 casos clínicos progresivos para practicar la interpretación y el llenado del formulario. En cada caso, completa el formulario de impedanciometría con los datos proporcionados, clasifica los hallazgos e indica tu correlación clínica.
+
+---
+
+### Caso 1: Oído normal bilateral
+
+:::exercise id="ex-caso1" title="Caso 1 — Adulto joven sin patología"
+Paciente de 22 años, sin antecedentes otológicos. Otoscopia: conductos libres, membranas timpánicas nacaradas, íntegras, sin alteraciones bilateralmente.
+
+**Timpanograma OD**: Volumen 1.2 ml | Presión –5 daPa | Compliance 0.7 ml | Gradiente 0.15
+**Timpanograma OI**: Volumen 1.1 ml | Presión +10 daPa | Compliance 0.6 ml | Gradiente 0.14
+
+**Reflejo acústico**:
+
+| | Contra OD | Ipsi OD | Frecuencia | Ipsi OI | Contra OI |
+|---|---|---|---|---|---|
+| | 85 | 80 | 500 Hz | 80 | 85 |
+| | 90 | 85 | 1000 Hz | 85 | 85 |
+| | 90 | 85 | 2000 Hz | 90 | 90 |
+| | 95 | 90 | 4000 Hz | 90 | 95 |
+
+**Tareas**:
+a) Clasifica el timpanograma de cada oído.
+b) Identifica el patrón del reflejo acústico.
+c) ¿Está indicado realizar decay? ¿Función tubaria? Justifica.
+
+:::solution
+a) **OD**: Curva tipo A (presión dentro de ±100 daPa; compliance 0.7 ml dentro del rango 0.3–1.7 ml). **OI**: Curva tipo A (presión +10 daPa; compliance 0.6 ml; ambos dentro de límites normales).
+
+b) **Patrón normal**. Todos los reflejos están presentes dentro de los rangos esperados (70-95 dB HL para tonos puros, con umbrales ipsilaterales ligeramente más bajos que contralaterales). No hay asimetrías significativas.
+
+c) **Decay**: No está indicado. No hay sospecha de patología retrococlear (reflejos normales, audición presumiblemente simétrica, sin tinnitus ni síntomas vestibulares). **Función tubaria**: No está indicada de rutina. Los timpanogramas tipo A bilateral indican función del oído medio y trompa de Eustaquio adecuada. Se realizaría solo ante queja específica de disfunción tubárica.
+:::
+:::
+
+---
+
+### Caso 2: Otitis media con efusión unilateral
+
+:::exercise id="ex-caso2" title="Caso 2 — Preescolar con OME izquierda"
+Paciente de 4 años con congestión nasal crónica. Otoscopia: OD membrana timpánica normal. OI membrana timpánica opaca, levemente abombada, sin nivel hidroaéreo.
+
+**Timpanograma OD**: Volumen 0.7 ml | Presión –15 daPa | Compliance 0.5 ml | Gradiente 0.12
+**Timpanograma OI**: Volumen 0.6 ml | Presión no identificable | Compliance 0.1 ml | Gradiente 0.02
+
+**Reflejo acústico**:
+
+| | Contra OD | Ipsi OD | Frecuencia | Ipsi OI | Contra OI |
+|---|---|---|---|---|---|
+| | AUS | 85 | 500 Hz | AUS | AUS |
+| | AUS | 85 | 1000 Hz | AUS | AUS |
+| | AUS | 90 | 2000 Hz | AUS | AUS |
+| | AUS | 95 | 4000 Hz | AUS | AUS |
+
+**Tareas**:
+a) Clasifica el timpanograma de cada oído.
+b) Identifica el patrón del reflejo acústico y explica por qué cada reflejo está presente o ausente.
+c) ¿Qué información aporta el Vea del oído izquierdo?
+
+:::solution
+a) **OD**: Curva tipo A (parámetros dentro de normalidad). **OI**: Curva tipo B (sin pico identificable, compliance 0.1 ml ≤0.3 ml, gradiente 0.02 <0.03). Consistente con ocupación del oído medio por efusión.
+
+b) **Patrón L invertida** (solo el R Ipsi está presente; los otros 3 están ausentes). Explicación por reflejo:
+- **R Ipsi (presente)**: Activador y sonda en OD (oído sano). La vía completa funciona.
+- **L Ipsi (ausente)**: Sonda en OI (efecto sonda por OME) + activador en OI (efecto sonido por CHL). Doble causa.
+- **Contra OD = L Contra (ausente)**: Activador en OI → la CHL atenúa el estímulo (efecto sonido). Aunque la sonda está en OD sano, el activador no alcanza intensidad coclear suficiente.
+- **Contra OI = R Contra (ausente)**: Sonda en OI → la efusión impide medir el cambio de admitancia (efecto sonda). Aunque el activador llega bien desde OD.
+
+c) El Vea de 0.6 ml está dentro del rango esperado para un niño de 4 años (normal). Esto indica que la sonda no está bloqueada y que la TM está intacta. Un Vea normal con timpanograma B confirma que la causa es ocupación del oído medio (OME) y no perforación (que daría Vea elevado) ni obstrucción de la sonda (que daría Vea muy bajo).
+:::
+:::
+
+---
+
+### Caso 3: Otosclerosis unilateral
+
+:::exercise id="ex-caso3" title="Caso 3 — Adulto con hipoacusia conductiva progresiva"
+Paciente de 38 años con hipoacusia progresiva del oído derecho de 2 años de evolución. Audiometría: gap óseo-aéreo de 30 dB en OD en frecuencias bajas con Rinne negativo. OI normal. Otoscopia: membranas timpánicas de aspecto normal bilateralmente (signo de Schwartze dudoso en OD).
+
+**Timpanograma OD**: Volumen 1.3 ml | Presión +5 daPa | Compliance 0.25 ml | Gradiente 0.10
+**Timpanograma OI**: Volumen 1.2 ml | Presión 0 daPa | Compliance 0.65 ml | Gradiente 0.13
+
+**Reflejo acústico**:
+
+| | Contra OD | Ipsi OD | Frecuencia | Ipsi OI | Contra OI |
+|---|---|---|---|---|---|
+| | 90 | AUS | 500 Hz | 80 | AUS |
+| | 90 | AUS | 1000 Hz | 85 | AUS |
+| | 95 | AUS | 2000 Hz | 85 | AUS |
+| | 100 | AUS | 4000 Hz | 90 | AUS |
+
+**Tareas**:
+a) Clasifica el timpanograma de cada oído.
+b) Identifica el patrón del reflejo y explícalo.
+c) ¿Por qué el timpanograma del OD no es tipo B si hay un gap óseo-aéreo de 30 dB?
+
+:::solution
+a) **OD**: Curva tipo AS (presión normal a +5 daPa; compliance 0.25 ml, inferior al límite de 0.3 ml). **OI**: Curva tipo A (todos los parámetros normales).
+
+b) **Patrón vertical en OD** (efecto sonda). Todos los reflejos con sonda en OD están ausentes (R Ipsi y Contra OI), mientras que todos los reflejos con sonda en OI están presentes (L Ipsi y Contra OD). La fijación del estribo por otosclerosis rigidiza la cadena osicular lo suficiente para que el pequeño cambio de admitancia producido por la contracción del estapedio no sea detectable con la sonda en ese oído. Los reflejos contralaterales del OD (activador en OD, medidos en OI) están presentes pero levemente elevados, lo cual es consistente con que el activador llega a la cóclea del OD con cierta atenuación por el componente conductivo.
+
+c) En la otosclerosis, la patología está en la cápsula ótica (fijación de la platina del estribo en la ventana oval), no en la TM ni en el espacio del oído medio. Por tanto, la TM tiene movilidad y el oído medio no contiene líquido. El timpanograma refleja la admitancia en el plano de la TM, que detecta rigidez aumentada (curva AS) pero no se aplana como en OME (curva B). Este es un hallazgo clásico: compliance reducida con presión normal y TM de aspecto normal en otoscopia.
+:::
+:::
+
+---
+
+### Caso 4: Parálisis facial unilateral
+
+:::exercise id="ex-caso4" title="Caso 4 — Parálisis de Bell izquierda"
+Paciente de 45 años con parálisis facial izquierda de inicio agudo hace 3 días. Audición subjetivamente normal. Otoscopia normal bilateral.
+
+**Timpanograma OD**: Volumen 1.4 ml | Presión –10 daPa | Compliance 0.8 ml | Gradiente 0.14
+**Timpanograma OI**: Volumen 1.3 ml | Presión –5 daPa | Compliance 0.75 ml | Gradiente 0.13
+
+**Reflejo acústico**:
+
+| | Contra OD | Ipsi OD | Frecuencia | Ipsi OI | Contra OI |
+|---|---|---|---|---|---|
+| | 85 | 85 | 500 Hz | AUS | AUS |
+| | 90 | 85 | 1000 Hz | AUS | AUS |
+| | 90 | 90 | 2000 Hz | AUS | AUS |
+| | 100 | 95 | 4000 Hz | AUS | AUS |
+
+**Tareas**:
+a) Clasifica los timpanogramas.
+b) Identifica el patrón del reflejo.
+c) ¿Qué información aporta este resultado sobre el sitio de la lesión del nervio facial?
+
+:::solution
+a) **OD**: Curva tipo A. **OI**: Curva tipo A. Ambos timpanogramas normales. La parálisis facial no afecta las propiedades acústicas del oído medio per se.
+
+b) **Patrón vertical en OI** (efecto sonda). Todos los reflejos con sonda en OI están ausentes (L Ipsi y Contra OD), mientras que los reflejos con sonda en OD están presentes (R Ipsi y Contra OI). El músculo estapedio izquierdo no se contrae, por lo que no se puede registrar ningún cambio de admitancia cuando la sonda está en OI.
+
+c) El hecho de que el reflejo esté ausente con sonda en OI indica que la lesión del nervio facial izquierdo es **proximal a la inervación del músculo estapedio** (es decir, más cerca del tronco encefálico que el punto donde se desprende la rama que inerva el estapedio). Si la lesión fuera distal a dicho punto, el músculo estapedio no estaría afectado y los reflejos serían normales a pesar de la parálisis facial visible. Este dato tiene valor pronóstico y topográfico para el equipo médico.
+:::
+:::
+
+---
+
+### Caso 5: Sospecha de patología retrococlear
+
+:::exercise id="ex-caso5" title="Caso 5 — Hipoacusia asimétrica con tinnitus"
+Paciente de 52 años con hipoacusia en OI progresiva de 1 año, tinnitus unilateral izquierdo y episodio de inestabilidad reciente. Audiometría: OD 20 dB HL promedio; OI 45 dB HL promedio (sensorioneural). Otoscopia normal bilateral.
+
+**Timpanograma OD**: Volumen 1.5 ml | Presión 0 daPa | Compliance 0.7 ml | Gradiente 0.12
+**Timpanograma OI**: Volumen 1.4 ml | Presión –10 daPa | Compliance 0.65 ml | Gradiente 0.11
+
+**Reflejo acústico**:
+
+| | Contra OD | Ipsi OD | Frecuencia | Ipsi OI | Contra OI |
+|---|---|---|---|---|---|
+| | 85 | 80 | 500 Hz | AUS | AUS |
+| | 85 | 85 | 1000 Hz | AUS | AUS |
+| | 90 | 85 | 2000 Hz | AUS | AUS |
+| | 95 | 90 | 4000 Hz | AUS | AUS |
+
+**Deterioro del reflejo acústico**: No fue posible realizarlo en OI (reflejos ausentes). En OD: 500 Hz normal; 1000 Hz normal.
+
+**Tareas**:
+a) Clasifica los timpanogramas.
+b) Identifica el patrón del reflejo y compáralo con lo esperado para una HSN coclear de 45 dB.
+c) ¿Qué conclusión clínica se puede extraer? ¿Qué derivación sugieres?
+
+:::solution
+a) **OD**: Curva tipo A. **OI**: Curva tipo A. Ambos timpanogramas normales, lo cual descarta componente conductivo.
+
+b) **Patrón diagonal** (efecto sonido en OI). Los reflejos están ausentes siempre que el activador se presenta al OI (L Ipsi y Contra OD), y presentes cuando el activador va al OD. **Comparación con lo esperado**: Para una HSN coclear de 45 dB HL, los datos normativos de Gelfand et al. (1990) indican que el percentil 90 del umbral del reflejo está alrededor de 95-100 dB HL. Es decir, se esperaría encontrar reflejos presentes (aunque posiblemente elevados) con activador en OI. La ausencia completa es **desproporcionada** al grado de pérdida, lo que eleva la sospecha de patología retrococlear.
+
+c) **Conclusión clínica**: El cuadro es altamente sugestivo de patología retrococlear izquierda (schwannoma vestibular como primera sospecha). Los elementos que apuntan a ello son: (1) hipoacusia sensorioneural asimétrica progresiva; (2) tinnitus unilateral; (3) inestabilidad; (4) reflejos ausentes de forma desproporcionada al grado de pérdida; (5) timpanometría normal (descarta oído medio). **Derivación**: Solicitar ABR y derivación a otorrinolaringología para resonancia magnética con gadolinio de fosa posterior y ángulo pontocerebeloso.
+:::
+:::
+
+---
+
+### Caso 6: Disfunción tubárica bilateral
+
+:::exercise id="ex-caso6" title="Caso 6 — Niño con sensación de oído tapado bilateral"
+Paciente de 7 años con sensación de oídos tapados tras resfrío prolongado. Otoscopia: membranas timpánicas levemente retraídas bilateralmente, sin efusión visible.
+
+**Timpanograma OD**: Volumen 0.7 ml | Presión –190 daPa | Compliance 0.45 ml | Gradiente 0.10
+**Timpanograma OI**: Volumen 0.65 ml | Presión –220 daPa | Compliance 0.35 ml | Gradiente 0.08
+
+**Reflejo acústico**: Ipsilateral presente a 95 dB HL bilateral a 1000 Hz. Contralaterales ausentes bilateralmente.
+
+**Tareas**:
+a) Clasifica los timpanogramas.
+b) ¿Por qué los reflejos ipsilaterales están presentes pero los contralaterales ausentes?
+c) ¿Es posible realizar función tubaria en este paciente? Justifica.
+
+:::solution
+a) **OD**: Curva tipo C (pico identificable a –190 daPa, compliance 0.45 ml ≥0.3 ml → disfunción tubárica). **OI**: Curva tipo C (pico a –220 daPa, compliance 0.35 ml ≥0.3 ml → disfunción tubárica). Nota: La presión del OI está muy cerca del límite de las curvas B, pero la presencia de un pico con compliance ≥0.3 ml y gradiente >0.03 permite clasificarla como C.
+
+b) Los reflejos ipsilaterales están presentes (aunque elevados a 95 dB HL) porque la presión negativa rigidiza parcialmente el sistema pero no lo suficiente como para impedir la detección del reflejo cuando la sonda mantiene presión en TPP. Los contralaterales ausentes probablemente se deben a que la combinación de la rigidez añadida en el oído sonda sumada a la atenuación parcial del activador por la disfunción del oído contralateral supera el umbral de detección. También podría haber un componente de elevación del umbral del reflejo por la CHL leve asociada a la presión negativa.
+
+c) **No es posible** realizar el protocolo de variación de presión ni el test de Honjo. El requisito es un timpanograma basal tipo A, y ambos oídos presentan curva C. El test de Bortnick tampoco aplica porque las membranas están intactas. Se debe tratar primero la disfunción tubárica (corticoide nasal, resolver el cuadro inflamatorio) y reevaluar la función tubaria cuando los timpanogramas se normalicen.
+:::
+:::
+
+---
+
+### Caso 7: Función tubaria con test de Bortnick
+
+:::exercise id="ex-caso7" title="Caso 7 — Evaluación preoperatoria de timpanoplastia"
+Paciente de 50 años con perforación timpánica central en OD de larga data. OI normal. Se solicita evaluación de función tubaria previo a timpanoplastia.
+
+**Otoscopia OD**: Perforación central de aproximadamente 40% de la superficie de la TM. Mucosa del oído medio visible, sin otorrea activa.
+**Otoscopia OI**: Normal.
+
+**Test de Bortnick OD**:
+- Fase –200 daPa: compensa hasta –50 daPa con maniobra de Valsalva.
+- Fase +200 daPa: compensa hasta +30 daPa con degluciones.
+
+**Timpanograma OI**: Volumen 1.3 ml | Presión –5 daPa | Compliance 0.8 ml | Gradiente 0.13
+
+**Tareas**:
+a) ¿Por qué no se puede realizar timpanograma convencional en OD?
+b) Clasifica la función tubaria del OD según los resultados de Bortnick.
+c) ¿Qué implicación tiene para la cirugía propuesta?
+
+:::solution
+a) Con perforación timpánica, la sonda no puede crear el sistema hermético cerrado necesario para la timpanometría. La presión se escapa a través de la perforación hacia el oído medio y la nasofaringe. Además, se mediría el volumen combinado del conducto + oído medio, no la admitancia en el plano de la TM. El timpanograma sería un artefacto, no una medida válida.
+
+b) **Función tubaria regular a buena**. En la fase –200 daPa, la presión compensó hasta –50 daPa (no llegó a 0, pero compensó un 75% del recorrido). En la fase +200 daPa, compensó hasta +30 daPa (compensó un 85% del recorrido). Ambas fases muestran compensación significativa pero incompleta.
+
+c) La función tubaria regular a buena es un factor pronóstico **favorable pero no óptimo** para la timpanoplastia. La TE demuestra capacidad de ecualización en ambas direcciones, lo que reduce el riesgo de acumulación de presión negativa que podría retraer o deteriorar el injerto. Sin embargo, la compensación incompleta sugiere que el seguimiento postoperatorio debe ser cuidadoso, con timpanometrías seriadas para detectar precozmente presión negativa residual.
+:::
+:::
+
+---
+
+### Caso 8: Caso integrador complejo
+
+:::exercise id="ex-caso8" title="Caso 8 — Evaluación audiológica completa"
+Paciente de 60 años con hipoacusia bilateral asimétrica (peor en OD), tinnitus bilateral y sensación de plenitud aural derecha. Audiometría: OD HSN moderada (PTP 55 dB HL); OI HSN leve (PTP 30 dB HL). Sin gap óseo-aéreo bilateral. Otoscopia: membranas timpánicas intactas, sin alteraciones visibles.
+
+**Timpanograma OD**: Volumen 1.6 ml | Presión +5 daPa | Compliance 0.55 ml | Gradiente 0.11
+**Timpanograma OI**: Volumen 1.5 ml | Presión 0 daPa | Compliance 0.6 ml | Gradiente 0.12
+
+**Reflejo acústico**:
+
+| | Contra OD | Ipsi OD | Frecuencia | Ipsi OI | Contra OI |
+|---|---|---|---|---|---|
+| | 95 | 95 | 500 Hz | 90 | 95 |
+| | 100 | 100 | 1000 Hz | 95 | 100 |
+| | AUS | AUS | 2000 Hz | 95 | AUS |
+| | AUS | AUS | 4000 Hz | AUS | AUS |
+
+**Tareas**:
+a) Clasifica los timpanogramas.
+b) Analiza los reflejos: ¿son consistentes con una HSN coclear bilateral asimétrica? ¿Hay algo que llame la atención?
+c) ¿Está indicado el deterioro del reflejo? Si lo realizaras a 1000 Hz con activador en OD y el resultado fuera decay positivo (+++), ¿qué significaría?
+d) Completa el formulario de impedanciometría para este paciente.
+
+:::solution
+a) **OD**: Curva tipo A (todos los parámetros normales). **OI**: Curva tipo A. No hay componente conductivo, coherente con la audiometría (sin gap óseo-aéreo).
+
+b) **Análisis de los reflejos**: Para una HSN coclear de 55 dB HL en OD, los datos normativos permiten reflejos presentes hasta ~100-105 dB HL (percentil 90 de Gelfand et al.). Los reflejos con activador en OD están presentes a 500 y 1000 Hz (95-100 dB HL) pero ausentes a 2000 y 4000 Hz. Para una HSN de 30 dB HL en OI, se esperan reflejos presentes hasta ~95 dB HL. Los reflejos con activador en OI están presentes a 500-2000 Hz y ausentes a 4000 Hz. **Hallazgo llamativo**: Los reflejos contralaterales (Contra OD y Contra OI) están ausentes a 2000 Hz, mientras que los ipsilaterales del OI a 2000 Hz sí están presentes. Esto podría sugerir un componente de elevación selectiva de los contralaterales más allá de lo esperado por la pérdida coclear sola. Los reflejos a 4000 Hz frecuentemente están ausentes incluso en audición normal, por lo que su ausencia tiene menor valor diagnóstico.
+
+c) **Sí está indicado** el deterioro del reflejo, dados los factores de riesgo: hipoacusia asimétrica, tinnitus bilateral (pero con plenitud aural unilateral derecha). Si el decay a 1000 Hz con activador en OD resultara positivo (+++), significaría que la amplitud del reflejo decae ≥50% en los primeros 5 segundos tanto a 500 como a 1000 Hz, lo cual es un **signo claro de sospecha retrococlear derecha**. Esto, sumado a la asimetría y la plenitud aural derecha, requeriría derivación urgente para ABR y RM con gadolinio.
+
+d) El formulario se completaría con todos los valores de timpanograma para cada oído, la matriz completa de reflejos con umbrales numéricos y "AUS" donde corresponda, y la sección de decay con el resultado obtenido. En observaciones se consignaría: "Otoscopia normal bilateral. Hipoacusia sensorioneural bilateral asimétrica (OD>OI). Tinnitus bilateral. Plenitud aural OD. Reflejos desproporcionadamente elevados/ausentes a frecuencias altas en OD. Se recomienda ABR y derivación ORL."
+:::
+:::
+
+---
+
+:::summary id="sum-practico"
+- La impedanciometría sigue una secuencia lógica: otoscopia → timpanograma → reflejo acústico → decay (si indicado) → función tubaria (si indicada). Cada paso informa la decisión de realizar el siguiente.
+- La otoscopia es obligatoria antes de cualquier inserción de la sonda. Otorrea activa contraindica la prueba.
+- El sello hermético es el factor técnico más crítico; su falla es la causa más frecuente de artefactos.
+- El timpanograma se clasifica cuantitativamente (volumen, presión, compliance, gradiente) antes de asignar un tipo cualitativo (A, AS, AD, B, C, Cs, P, D, E).
+- Los patrones del reflejo se interpretan en la matriz de 4 condiciones, identificando si hay efecto sonido, efecto sonda, o combinaciones (L invertida, horizontal, unibox).
+- El decay solo se realiza con indicación clínica y jamás superando 115 dB HL.
+- La función tubaria requiere seleccionar el protocolo según el estado de la TM (intacta con curva A basal vs perforada).
+- Todo se registra en el formulario clínico de impedanciometría de forma completa y sistemática.
+:::
+
+---
+
+:::reference id="ref-practico"
+- Vargas Bustamante C. Impedanciometría [presentación de clase]. Universidad Austral de Chile, Sede Puerto Montt; 2025.
+- Hunter LL, Sanford CA. Tympanometry and Wideband Acoustic Immittance. En: Katz J, et al., eds. *Handbook of Clinical Audiology*. Capítulo 9.
+- Feeney MP, Schairer KS. Acoustic Stapedius Reflex Measurements. En: Katz J, et al., eds. *Handbook of Clinical Audiology*. Capítulo 10.
+- ANSI/ASA S3.39. Specifications for Instruments to Measure Aural Acoustic Impedance and Admittance. 1987 (R2012).
+:::
