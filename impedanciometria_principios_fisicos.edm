@@ -1,0 +1,1712 @@
+:::hero
+title: "Principios Físicos de la Impedanciometría"
+author: "Audiología Clínica"
+version: 2.0
+date: 2026-03
+subject: "Audiología — Diagnóstico"
+level: "Universitario inicial → Audiólogo clínico"
+- Energía sonora y transferencia acústica
+- Impedancia, admitancia y sus componentes
+- Reactancia de rigidez y de masa
+- Resonancia del oído medio
+- Glosario técnico
+- Del concepto físico al timpanograma
+:::
+
+# Principios Físicos de la Impedanciometría
+
+:::objective
+- Comprender qué ocurre con la energía sonora cuando llega a una interfaz acústica.
+- Distinguir impedancia, admitancia, reactancia y sus componentes G y B.
+- Relacionar los conceptos de rigidez, masa y amortiguamiento con el comportamiento del oído medio.
+- Entender por qué existe una frecuencia de resonancia y qué la determina.
+- Conectar los principios físicos con la lectura de un timpanograma.
+:::
+
+---
+
+# Parte I — El sonido como dispersión de energía
+
+## 1.1 El sonido no viaja: se propaga
+
+Antes de hablar de impedancia es necesario tener claro qué es el sonido en términos físicos. Un error frecuente es imaginarlo como algo que "viaja" de un punto a otro, como una pelota. En realidad el sonido es una **perturbación de presión que se propaga** a través de un medio elástico —aire, agua, tejido— porque las moléculas empujan a sus vecinas y estas a las siguientes. Las moléculas no se desplazan: oscilan brevemente en su lugar y transfieren energía cinética hacia adelante.
+
+:::key-concept id="kc-sonido-energia"
+El sonido es **dispersión de energía mecánica** en forma de variaciones de presión. Lo que viaja es la perturbación, no las moléculas del medio. Cada punto del medio oscila alrededor de su posición de equilibrio, comprimiéndose y expandiéndose alternativamente.
+:::
+
+Esta distinción importa porque en impedanciometría lo que el instrumento mide es precisamente esa variación de presión —no un desplazamiento— y lo hace sobre el fondo de una presión ya existente: la presión barométrica.
+
+---
+
+:::diagram id="fig-onda-presion" title="Propagación del sonido: compresiones y rarefacciones de presión en el aire"
+Esquema longitudinal de una onda sonora en el canal auditivo. Se muestran zonas de compresión (moléculas más juntas, presión mayor que la atmosférica) alternadas con zonas de rarefacción (moléculas más separadas, presión menor). Una curva sinusoidal superpuesta muestra la variación de presión. Se indica la presión atmosférica de referencia (línea horizontal punteada) y la presión sonora como desviación sobre esa línea.
+
+```svg
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ap1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Línea de presión atmosférica de referencia -->
+  <line x1="40" y1="140" x2="510" y2="140" stroke="currentColor" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+  <text x="42" y="135" font-size="9" fill="currentColor" opacity="0.7">P atm (referencia)</text>
+
+  <!-- Curva de presión sonora -->
+  <path d="M50,140 C65,140 70,60 95,60 C120,60 125,140 150,140 C175,140 180,220 205,220 C230,220 235,140 260,140 C285,140 290,60 315,60 C340,60 345,140 370,140 C395,140 400,220 425,220 C450,220 455,140 480,140"
+        stroke="currentColor" stroke-width="2.5" fill="none"/>
+
+  <!-- Zonas de compresión — puntos densos -->
+  <!-- Compresión 1 cerca de x=95 -->
+  <circle cx="82" cy="105" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="90" cy="98"  r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="98" cy="102" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="86" cy="112" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="104" cy="94" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="78"  cy="95" r="2.5" fill="currentColor" opacity="0.8"/>
+  <text x="82" y="78" font-size="9" fill="currentColor" text-anchor="middle">compresión</text>
+  <text x="82" y="88" font-size="9" fill="currentColor" text-anchor="middle">P > Patm</text>
+
+  <!-- Compresión 2 -->
+  <circle cx="302" cy="105" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="310" cy="98"  r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="318" cy="102" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="306" cy="112" r="2.5" fill="currentColor" opacity="0.8"/>
+  <circle cx="296" cy="95"  r="2.5" fill="currentColor" opacity="0.8"/>
+
+  <!-- Zonas de rarefacción — puntos dispersos -->
+  <!-- Rarefacción 1 cerca de x=205 -->
+  <circle cx="192" cy="195" r="2.5" fill="currentColor" opacity="0.4"/>
+  <circle cx="205" cy="210" r="2.5" fill="currentColor" opacity="0.4"/>
+  <circle cx="218" cy="198" r="2.5" fill="currentColor" opacity="0.4"/>
+  <circle cx="200" cy="202" r="2.5" fill="currentColor" opacity="0.4"/>
+  <text x="205" y="238" font-size="9" fill="currentColor" text-anchor="middle">rarefacción</text>
+  <text x="205" y="248" font-size="9" fill="currentColor" text-anchor="middle">P &lt; Patm</text>
+
+  <!-- Rarefacción 2 -->
+  <circle cx="412" cy="195" r="2.5" fill="currentColor" opacity="0.4"/>
+  <circle cx="425" cy="210" r="2.5" fill="currentColor" opacity="0.4"/>
+  <circle cx="438" cy="198" r="2.5" fill="currentColor" opacity="0.4"/>
+
+  <!-- Eje de propagación -->
+  <line x1="40" y1="255" x2="510" y2="255" stroke="currentColor" stroke-width="1.5" marker-end="url(#ap1)"/>
+  <text x="515" y="259" font-size="10" fill="currentColor">→</text>
+  <text x="260" y="269" font-size="10" fill="currentColor" text-anchor="middle">dirección de propagación</text>
+</svg>
+```
+:::
+
+Ya que los viste en el diagrama, es el momento de fijar los nombres. Son dos términos que aparecerán en toda la literatura de acústica y audiología, y uno de ellos —rarefacción— tiende a desaparecer de la memoria con facilidad.
+
+:::definition id="def-comp-raref" multiple
+**Compresión** | Zona de la onda donde las moléculas están más juntas de lo normal. La presión local supera la presión atmosférica de referencia. Corresponde al pico positivo de la curva sinusoidal.
+**Rarefacción** | Zona de la onda donde las moléculas están más separadas de lo normal. La presión local cae por debajo de la presión atmosférica. Corresponde al valle negativo de la curva sinusoidal.
+:::
+
+:::mnemonic id="mne-rarefaccion"
+**Rarefacción → el aire está "raro".**
+Raro, escaso, disperso. Las moléculas se separaron y el aire quedó enrarecido —como el aire de altura, donde hay "menos" aire por volumen. Si el aire está raro, hay rarefacción.
+
+**Compresión → fácil: se comprimió, se apretó, hay más.**
+:::
+
+:::mnemonic id="mne-onda-completa"
+Una onda sonora completa = **una compresión + una rarefacción**.
+Como respirar: inspiración (compresión, entra energía) → espiración (rarefacción, sale). El ciclo no puede tener solo una mitad.
+:::
+
+---
+
+## 1.2 La presión en el oído: dos niveles que no deben confundirse
+
+Aquí aparece uno de los conceptos que más confusión genera al inicio: la presión que mide el impedanciómetro **no es la misma** que la presión barométrica, pero depende de ella como contexto.
+
+La **presión barométrica** es la presión absoluta del aire atmosférico (≈ 101 325 Pa a nivel del mar). Es estática, lenta, la que cambia cuando subes una montaña o vuela en un avión. El oído medio normalmente mantiene su presión interna igual a la atmosférica a través de la trompa de Eustaquio.
+
+La **presión sonora** es la pequeñísima fluctuación que el sonido genera *sobre* esa presión estática. Una conversación normal produce variaciones de apenas 0,02 Pa sobre los 101 325 Pa del fondo. Es decir, el sonido es una perturbación de menos del 0,00002% de la presión base.
+
+:::definition multiple
+**Presión barométrica (P₀)** | Presión estática del aire. Valor de referencia sobre el que existe el sonido. Se mide en Pa, mmHg o hPa. En el timpanograma se manipula artificialmente en daPa (decaPascal) para cambiar la tensión de la membrana.
+**Presión sonora (p)** | Variación dinámica de presión producida por el sonido, superpuesta sobre P₀. Se mide en Pa o se expresa en dB SPL. Es lo que oscila con la frecuencia del sonido.
+**daPa (decaPascal)** | Unidad usada en timpanometría para el barrido de presión estática. 1 daPa = 10 Pa. El rango habitual de barrido es de +200 a −400 daPa.
+:::
+
+Cuando el impedanciómetro hace el **barrido de presión**, no está generando sonido: está cambiando lentamente la presión estática del canal para modificar la tensión de la membrana timpánica, exactamente como un cambio de altitud. Ese cambio de tensión altera cómo responde la membrana al tono sonda —esa sí es una presión sonora— que el instrumento emite simultáneamente.
+
+---
+
+:::diagram id="fig-presion-barrido" title="Dos presiones superpuestas: presión barométrica de barrido y presión sonora del tono sonda"
+Gráfica con eje temporal. Se muestran dos señales superpuestas a distinta escala: una línea lentamente variable (presión de barrido, escala en daPa) y encima una oscilación rápida y pequeña (tono sonda a 226 Hz). Se distinguen claramente las dos escalas temporales. Anotaciones indican cuál es cuál.
+
+```svg
+<svg viewBox="0 0 540 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="apb" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Ejes -->
+  <line x1="50" y1="220" x2="510" y2="220" stroke="currentColor" stroke-width="1.5" marker-end="url(#apb)"/>
+  <line x1="50" y1="260" x2="50"  y2="20"  stroke="currentColor" stroke-width="1.5" marker-end="url(#apb)"/>
+  <text x="515" y="224" font-size="10" fill="currentColor">t</text>
+  <text x="30"  y="18"  font-size="10" fill="currentColor">P</text>
+
+  <!-- Línea de referencia P=0 del canal -->
+  <line x1="50" y1="140" x2="510" y2="140" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="52" y="136" font-size="8" fill="currentColor" opacity="0.5">P ref</text>
+
+  <!-- Curva de barrido de presión (lenta, de +200 a -400 daPa) -->
+  <path d="M60,80 C120,82 180,88 240,120 C300,152 360,175 420,185 C460,190 490,192 505,193"
+        stroke="currentColor" stroke-width="2.5" fill="none" stroke-dasharray="8,3"/>
+
+  <!-- Tono sonda superpuesto (oscilación rápida pequeña sobre la curva de barrido) -->
+  <!-- Segmento inicial (P alta, membrana tensa) — amplitud pequeña -->
+  <path d="M60,80 C63,72 66,88 69,80 C72,72 75,88 78,80 C81,72 84,88 87,80 C90,72 93,88 96,80 C99,72 102,88 105,80 C108,72 111,88 114,82 C117,74 120,90 123,82"
+        stroke="currentColor" stroke-width="1.2" fill="none"/>
+
+  <!-- Segmento medio (presión neutra, membrana libre) — amplitud máxima -->
+  <path d="M228,120 C231,104 234,136 237,120 C240,104 243,136 246,120 C249,104 252,136 255,120 C258,104 261,136 264,120 C267,104 270,136 273,120 C276,104 279,136 282,120"
+        stroke="currentColor" stroke-width="1.2" fill="none"/>
+
+  <!-- Segmento final (P baja, membrana tensa opuesta) — amplitud pequeña de nuevo -->
+  <path d="M408,185 C411,179 414,191 417,185 C420,179 423,191 426,185 C429,179 432,191 435,185 C438,179 441,191 444,185 C447,179 450,191 453,185"
+        stroke="currentColor" stroke-width="1.2" fill="none"/>
+
+  <!-- Anotaciones -->
+  <text x="80"  y="58"  font-size="10" fill="currentColor">presión alta (+200 daPa)</text>
+  <text x="80"  y="70"  font-size="9"  fill="currentColor" opacity="0.7">membrana tensa → respuesta pequeña</text>
+
+  <text x="220" y="100" font-size="10" fill="currentColor">presión neutra (0 daPa)</text>
+  <text x="220" y="112" font-size="9"  fill="currentColor" opacity="0.7">membrana libre → respuesta máxima</text>
+
+  <text x="380" y="168" font-size="10" fill="currentColor">presión baja (−400 daPa)</text>
+  <text x="380" y="180" font-size="9"  fill="currentColor" opacity="0.7">membrana tensa → respuesta pequeña</text>
+
+  <!-- Leyenda -->
+  <line x1="55"  y1="248" x2="90"  y2="248" stroke="currentColor" stroke-width="2.5" stroke-dasharray="7,3"/>
+  <text x="95"  y="252" font-size="10" fill="currentColor">barrido de presión (daPa) — escala lenta</text>
+  <line x1="55"  y1="262" x2="90"  y2="262" stroke="currentColor" stroke-width="1.5"/>
+  <text x="95"  y="266" font-size="10" fill="currentColor">tono sonda (226 Hz) — escala rápida</text>
+</svg>
+```
+:::
+
+Lo que el instrumento registra es la amplitud de la respuesta al tono sonda en cada punto del barrido. Cuando la membrana está libre (presión neutra) responde con mayor amplitud → mayor admitancia → pico del timpanograma. Cuando está comprimida en cualquier dirección, responde menos.
+
+---
+
+## 1.3 La sombra acústica y la frecuencia
+
+Para entender por qué la frecuencia del tono sonda importa tanto, hay que recuperar un concepto de física ondulatoria: la **sombra acústica**.
+
+Cuando una onda encuentra un obstáculo o una apertura, su comportamiento depende de la relación entre su longitud de onda y el tamaño de ese obstáculo. Esta relación determina si la onda "dobla" alrededor del obstáculo o si queda bloqueada detrás de él.
+
+:::definition multiple
+**Longitud de onda (λ)** | Distancia entre dos compresiones consecutivas de la onda. m{λ = c/f}, donde c ≈ 343 m/s en el aire. A mayor frecuencia, menor λ.
+**Sombra acústica** | Zona de presión sonora reducida detrás de un obstáculo cuyo tamaño es mayor que la longitud de onda del sonido. Las frecuencias altas (λ corta) proyectan sombras bien definidas. Las frecuencias bajas (λ larga) rodean los obstáculos y no proyectan sombra.
+**Difracción** | Capacidad de una onda de doblar su trayectoria alrededor de un obstáculo. Es inversamente proporcional a la frecuencia: mayor difracción a menor frecuencia.
+:::
+
+---
+
+:::diagram id="fig-sombra-acustica" title="Sombra acústica: graves rodean obstáculos, agudos proyectan sombra"
+Dos paneles comparativos. Panel izquierdo: fuente de sonido grave (λ grande) — las ondas rodean completamente un obstáculo, no hay zona de silencio. Panel derecho: fuente de sonido agudo (λ pequeña) — las ondas proyectan una sombra bien definida detrás del obstáculo. Se etiqueta claramente la zona de sombra en el panel derecho.
+
+```svg
+<svg viewBox="0 0 540 300" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Divisor central -->
+  <line x1="270" y1="10" x2="270" y2="290" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+
+  <!-- PANEL IZQUIERDO — Frecuencia grave -->
+  <text x="135" y="22" font-size="12" fill="currentColor" text-anchor="middle" font-weight="bold">Grave (λ grande)</text>
+  <text x="135" y="36" font-size="10" fill="currentColor" text-anchor="middle" opacity="0.7">ej. 250 Hz → λ ≈ 1.4 m</text>
+
+  <!-- Fuente izquierda -->
+  <circle cx="40" cy="155" r="7" fill="currentColor"/>
+  <text x="40" y="175" font-size="9" fill="currentColor" text-anchor="middle">fuente</text>
+
+  <!-- Obstáculo izquierdo -->
+  <rect x="155" y="120" width="12" height="70" fill="currentColor" opacity="0.7"/>
+
+  <!-- Ondas circulares que rodean el obstáculo -->
+  <path d="M47,155 Q100,80  155,75" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.9"/>
+  <path d="M47,155 Q100,230 155,235" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.9"/>
+  <!-- Ondas pasando por arriba y rodeando -->
+  <path d="M167,75  Q220,80  250,115" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.9"/>
+  <path d="M167,235 Q220,230 250,195" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.9"/>
+  <!-- Onda que llega al frente -->
+  <path d="M47,155 Q95,155 153,155" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6" stroke-dasharray="3,3"/>
+  <!-- Onda que rodea y continua -->
+  <path d="M167,155 Q210,155 250,155" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.9"/>
+
+  <!-- Sin sombra — zona iluminada -->
+  <text x="220" y="155" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.6">sin sombra</text>
+  <text x="220" y="168" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.6">onda rodea</text>
+
+  <!-- PANEL DERECHO — Frecuencia aguda -->
+  <text x="405" y="22" font-size="12" fill="currentColor" text-anchor="middle" font-weight="bold">Agudo (λ pequeña)</text>
+  <text x="405" y="36" font-size="10" fill="currentColor" text-anchor="middle" opacity="0.7">ej. 4000 Hz → λ ≈ 8.5 cm</text>
+
+  <!-- Fuente derecha -->
+  <circle cx="290" cy="155" r="7" fill="currentColor"/>
+  <text x="290" y="175" font-size="9" fill="currentColor" text-anchor="middle">fuente</text>
+
+  <!-- Obstáculo derecho -->
+  <rect x="400" y="120" width="12" height="70" fill="currentColor" opacity="0.7"/>
+
+  <!-- Ondas rectas que no rodean -->
+  <line x1="298" y1="130" x2="398" y2="130" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="298" y1="145" x2="398" y2="145" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="298" y1="155" x2="398" y2="155" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="298" y1="165" x2="398" y2="165" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="298" y1="180" x2="398" y2="180" stroke="currentColor" stroke-width="1.5"/>
+
+  <!-- Ondas que pasan por arriba y abajo del obstáculo -->
+  <line x1="413" y1="100" x2="530" y2="100" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="413" y1="115" x2="530" y2="115" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="413" y1="200" x2="530" y2="200" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="413" y1="215" x2="530" y2="215" stroke="currentColor" stroke-width="1.5"/>
+
+  <!-- Zona de sombra -->
+  <rect x="413" y="121" width="117" height="68" fill="currentColor" opacity="0.08"/>
+  <text x="471" y="152" font-size="10" fill="currentColor" text-anchor="middle">SOMBRA</text>
+  <text x="471" y="166" font-size="9"  fill="currentColor" text-anchor="middle" opacity="0.7">presión reducida</text>
+</svg>
+```
+:::
+
+Este principio explica algo que los audiólogos usan todo el tiempo sin nombrarlo: el **efecto de cabeza** (*head shadow*). La cabeza actúa como obstáculo físico para los sonidos de alta frecuencia —porque su tamaño es mayor que la longitud de onda de esas frecuencias— pero no para los sonidos graves, que la rodean. Por eso la pérdida auditiva en un oído se detecta mejor en agudos mediante la asimetría interaural.
+
+:::note id="nota-sombra-cabeza"
+**La cabeza como obstáculo acústico.** A 4000 Hz, λ ≈ 8.5 cm. La cabeza mide ~18 cm: es el doble de la longitud de onda → proyecta sombra. A 250 Hz, λ ≈ 1.4 m: la cabeza es insignificante frente a esa escala → el sonido la rodea completamente. Esto es por qué en audiometría las diferencias interaurales de umbral son siempre más grandes en frecuencias altas.
+:::
+
+---
+
+## 1.4 Lo que pasa cuando el sonido llega a la membrana timpánica
+
+Con estas bases, ahora la pregunta central tiene más sentido: cuando la onda de presión llega a la membrana timpánica, ¿qué fracción de esa energía continúa hacia el oído medio y qué fracción rebota?
+
+La respuesta depende de qué tan bien el oído medio está preparado para recibir esa energía. Si hay un desajuste entre las propiedades del medio que trae el sonido (aire del canal auditivo) y las propiedades del sistema que lo recibe (oído medio), la energía se refleja. Ese desajuste se llama **diferencia de impedancia**.
+
+:::math id="math-impedancia-basica"
+Z = P / v
+Z = impedancia acústica  [Pa·s/m³ = rayl]
+P = presión sonora  [Pa]
+v = velocidad de partícula  [m/s]
+:::
+
+Si el sistema tiene mucha impedancia, una gran presión produce poco movimiento. Si tiene poca impedancia, cualquier presión lo mueve con facilidad.
+
+---
+
+:::diagram id="fig-interfaz" title="Onda sonora llegando a la membrana timpánica: energía incidente, reflejada y absorbida"
+Esquema horizontal. Una onda viajando hacia la derecha llega a la membrana timpánica. Al contacto se divide en energía reflejada (flecha hacia la izquierda) y energía absorbida (flecha que continúa hacia el oído medio). Se etiquetan los tres componentes y la ecuación de balance.
+
+```svg
+<svg viewBox="0 0 540 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Membrana timpánica -->
+  <line x1="290" y1="20" x2="290" y2="195" stroke="currentColor" stroke-width="3"/>
+  <text x="290" y="212" font-size="11" fill="currentColor" text-anchor="middle">membrana timpánica</text>
+
+  <!-- Etiquetas zonas -->
+  <text x="155" y="16" font-size="11" fill="currentColor" text-anchor="middle">canal auditivo externo</text>
+  <text x="415" y="16" font-size="11" fill="currentColor" text-anchor="middle">oído medio</text>
+
+  <!-- Onda incidente -->
+  <line x1="60" y1="100" x2="272" y2="100" stroke="currentColor" stroke-width="2.5" marker-end="url(#arr)"/>
+  <path d="M62,100 Q72,85 82,100 Q92,115 102,100 Q112,85 122,100 Q132,115 142,100 Q152,85 162,100 Q172,115 182,100 Q192,85 202,100 Q212,115 222,100 Q232,85 242,100 Q252,115 262,100"
+        stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <text x="165" y="86" font-size="12" fill="currentColor" text-anchor="middle">Ei — incidente</text>
+
+  <!-- Onda reflejada -->
+  <line x1="272" y1="135" x2="80" y2="135" stroke="currentColor" stroke-width="2" marker-end="url(#arr)" stroke-dasharray="6,3"/>
+  <text x="165" y="155" font-size="12" fill="currentColor" text-anchor="middle">Er — reflejada</text>
+
+  <!-- Onda transmitida -->
+  <line x1="305" y1="100" x2="470" y2="100" stroke="currentColor" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="390" y="86"  font-size="12" fill="currentColor" text-anchor="middle">Ea — absorbida</text>
+  <text x="390" y="100" font-size="9"  fill="currentColor" text-anchor="middle">(hacia cóclea)</text>
+
+  <!-- Balance -->
+  <text x="270" y="188" font-size="11" fill="currentColor" text-anchor="middle">Ei = Er + Ea</text>
+</svg>
+```
+:::
+
+La energía que no se refleja es la que entra al oído medio y eventualmente llega a la cóclea. En impedanciometría medimos indirectamente cuánto se refleja: a mayor impedancia del sistema, mayor reflexión y menor absorción.
+
+---
+
+:::definition multiple
+**Reflectancia (R)** | Fracción de la energía sonora incidente que se refleja. R = 1 indica reflexión total; R = 0, absorción total. Cuanto mayor la impedancia del oído medio, mayor R.
+**Absorbancia (A)** | Fracción de energía que ingresa al sistema. A = 1 − R.
+**Impedancia acústica (Z)** | Oposición al movimiento cuando el sistema recibe presión. Z = P/v. A mayor Z, mayor reflexión.
+**Admitancia acústica (Y)** | Facilidad con que el sistema acepta energía. Y = 1/Z. A mayor Y, mayor absorción. Es lo que mide el timpanograma.
+:::
+
+Admitancia e impedancia son dos caras de la misma moneda. Los impedanciómetros clínicos trabajan en términos de admitancia porque es más intuitivo: mayor admitancia significa que el oído medio acepta mejor la energía sonora.
+
+---
+
+# Parte II — Anatomía de la admitancia: G y B
+
+## 2.1 Dos destinos posibles para la energía
+
+Cuando la energía sonora entra al oído medio, no desaparece: tiene que ir a algún lado. Y solo puede tomar dos caminos. El primero es **disiparse**: convertirse en calor o en movimiento irreversible, como cuando frotas las manos y las sientes tibias. El segundo es **almacenarse temporalmente** y luego devolverse, como cuando comprimes un resorte y lo sueltas: la energía regresa casi íntegra.
+
+Estos dos destinos son físicamente distintos y ocurren en paralelo dentro del oído medio. La admitancia captura ambos en un solo número, pero para entender qué está pasando clínicamente hay que separarlos.
+
+:::key-concept id="kc-dos-destinos"
+Toda la energía que entra al oído medio hace una de dos cosas:
+- Se **disipa** → la mide la conductancia **G**
+- Se **almacena y devuelve** → la mide la susceptancia **B**
+
+m{Y = G + jB}
+:::
+
+La distinción no es solo académica. En la práctica clínica, G informa sobre el amortiguamiento del sistema (qué tan viscoso o friccional es) y B informa sobre cuál de los dos componentes reactivos —rigidez o masa— está dominando. Esa información es la que diferencia patologías.
+
+---
+
+## 2.2 Conductancia G: la energía que se pierde
+
+Imagina empujar una puerta en un baño turco con el aire húmedo y denso. Cada vez que la empujas, parte de tu energía se convierte en calor por la fricción del aire. Esa energía no regresa. Eso es la conductancia: la fracción de la admitancia que representa energía **disipada de forma irreversible**.
+
+En el oído medio, la conductancia proviene principalmente de la fricción en las articulaciones osiculares, la viscosidad de los tejidos blandos, y la resistencia del fluido en la ventana oval. Es independiente de la frecuencia del sonido.
+
+:::definition id="def-conductancia"
+**Conductancia (G)** | Componente real de la admitancia. Representa la energía que el sistema disipa —fricción, amortiguamiento, calor—. A mayor G, más energía se pierde en el sistema sin ser devuelta. Unidades: milisiemens (mmho). Es independiente de la frecuencia.
+:::
+
+:::mnemonic id="mne-conductancia"
+**G de conductancia → G de "gasta".**
+Lo que mide G es la energía que el sistema *gasta* sin devolverla. Como el agua que se escapa por una grieta: se fue, no vuelve.
+:::
+
+Un sistema con G muy alta tiene mucha fricción interna. Un sistema con G muy baja es más "elástico" y devuelve la energía. En el oído medio normal, G es relativamente baja, lo que significa que el sistema es eficiente: no desperdicia mucho de la energía que recibe.
+
+---
+
+## 2.3 Susceptancia B: la energía que se guarda y regresa
+
+Ahora imagina empujar ese mismo resorte de la sección anterior. Al comprimirlo, guardas energía en él —energía potencial elástica— y cuando lo sueltas, te la devuelve casi por completo. Esa energía no se perdió: se almacenó temporalmente. Eso es la susceptancia.
+
+Pero hay dos maneras físicamente distintas de almacenar energía en un sistema mecánico:
+
+:::definition id="def-susceptancia" multiple
+**Susceptancia positiva (B > 0)** | El sistema almacena energía por **rigidez** (elasticidad). Como un resorte comprimido: guarda energía potencial y la devuelve. Domina cuando la frecuencia del estímulo es **menor** que la frecuencia de resonancia.
+**Susceptancia negativa (B < 0)** | El sistema almacena energía por **masa** (inercia). Como una rueda girando: cuesta arrancarla pero también cuesta detenerla. Domina cuando la frecuencia del estímulo es **mayor** que la frecuencia de resonancia.
+**Susceptancia cero (B = 0)** | Rigidez y masa se cancelan exactamente. El sistema está en **resonancia**. Toda la admitancia es conductancia pura → máxima transferencia de energía.
+:::
+
+:::mnemonic id="mne-susceptancia"
+**B positiva → resorte → rigidez → por debajo de resonancia.**
+**B negativa → rueda → masa → por encima de resonancia.**
+**B cero → resonancia → todo se transfiere.**
+
+Para recordar el signo: un resorte *sube* cuando lo sueltas (B sube, es positivo). Una rueda pesada *cae* cuando pierdes el control (B cae, es negativo).
+:::
+
+---
+
+:::diagram id="fig-BG-analogia" title="Analogía mecánica de G y B: puerta con fricción (G) vs. resorte (B+) vs. rueda pesada (B−)"
+Tres paneles horizontales. Izquierdo: una puerta con bisagras oxidadas y una flecha de energía que se convierte en calor → etiquetado G (disipación). Centro: un resorte comprimido con flecha de energía almacenada y flecha de energía devuelta → etiquetado B > 0 (rigidez). Derecho: una rueda de inercia girando con flecha de energía cinética almacenada → etiquetado B < 0 (masa).
+
+```svg
+<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ag" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Divisores -->
+  <line x1="180" y1="20" x2="180" y2="220" stroke="currentColor" stroke-width="1" stroke-dasharray="3,4" opacity="0.3"/>
+  <line x1="360" y1="20" x2="360" y2="220" stroke="currentColor" stroke-width="1" stroke-dasharray="3,4" opacity="0.3"/>
+
+  <!-- PANEL G: puerta con fricción -->
+  <text x="90" y="18" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">G — disipación</text>
+  <!-- Puerta -->
+  <rect x="55" y="50" width="15" height="110" fill="none" stroke="currentColor" stroke-width="2"/>
+  <!-- Bisagras oxidadas (rayas) -->
+  <line x1="55" y1="70"  x2="42" y2="70"  stroke="currentColor" stroke-width="2"/>
+  <line x1="55" y1="80"  x2="42" y2="80"  stroke="currentColor" stroke-width="2"/>
+  <line x1="55" y1="140" x2="42" y2="140" stroke="currentColor" stroke-width="2"/>
+  <line x1="55" y1="150" x2="42" y2="150" stroke="currentColor" stroke-width="2"/>
+  <!-- Flecha de energía entrante -->
+  <line x1="110" y1="105" x2="73" y2="105" stroke="currentColor" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="130" y="101" font-size="9" fill="currentColor">E entra</text>
+  <!-- Símbolo de calor (ondas) -->
+  <path d="M62,160 Q67,150 72,160 Q77,170 82,160" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <path d="M62,172 Q67,162 72,172 Q77,182 82,172" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <text x="72" y="200" font-size="9" fill="currentColor" text-anchor="middle">calor</text>
+  <text x="72" y="212" font-size="9" fill="currentColor" text-anchor="middle">(se pierde)</text>
+
+  <!-- PANEL B+: resorte -->
+  <text x="270" y="18" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">B > 0 — rigidez</text>
+  <!-- Resorte comprimido -->
+  <line x1="190" y1="105" x2="210" y2="105" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M210,105 L216,92 L222,118 L228,92 L234,118 L240,92 L246,118 L252,105"
+        stroke="currentColor" stroke-width="2" fill="none"/>
+  <line x1="252" y1="105" x2="272" y2="105" stroke="currentColor" stroke-width="1.5"/>
+  <!-- Pared derecha resorte -->
+  <rect x="272" y="85" width="8" height="40" fill="currentColor" opacity="0.6"/>
+  <!-- Flecha entrada -->
+  <line x1="190" y1="90" x2="210" y2="90" stroke="currentColor" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="188" y="87" font-size="8" fill="currentColor" text-anchor="end">E</text>
+  <!-- Flecha devolución -->
+  <line x1="210" y1="120" x2="190" y2="120" stroke="currentColor" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="188" y="133" font-size="8" fill="currentColor" text-anchor="end">E devuelta</text>
+  <text x="231" y="155" font-size="9" fill="currentColor" text-anchor="middle">se almacena</text>
+  <text x="231" y="167" font-size="9" fill="currentColor" text-anchor="middle">y regresa</text>
+  <text x="231" y="200" font-size="10" fill="currentColor" text-anchor="middle">f &lt; f₀</text>
+
+  <!-- PANEL B-: rueda de inercia -->
+  <text x="450" y="18" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">B &lt; 0 — masa</text>
+  <!-- Rueda -->
+  <circle cx="450" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="450" cy="100" r="6"  fill="currentColor"/>
+  <!-- Radios -->
+  <line x1="450" y1="60"  x2="450" y2="140" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="410" y1="100" x2="490" y2="100" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="422" y1="72"  x2="478" y2="128" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <line x1="422" y1="128" x2="478" y2="72"  stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <!-- Flecha de rotación -->
+  <path d="M450,56 A44,44 0 0,1 490,96" stroke="currentColor" stroke-width="2" fill="none" marker-end="url(#ag)"/>
+  <text x="450" y="170" font-size="9" fill="currentColor" text-anchor="middle">inercia almacenada</text>
+  <text x="450" y="182" font-size="9" fill="currentColor" text-anchor="middle">como energía cinética</text>
+  <text x="450" y="200" font-size="10" fill="currentColor" text-anchor="middle">f > f₀</text>
+</svg>
+```
+:::
+
+---
+
+## 2.4 El plano admitancia: ver G y B juntos
+
+Los instrumentos modernos de impedanciometría pueden graficar G y B por separado o representar la admitancia completa en lo que se llama el **plano admitancia**. Entender este plano es clave para interpretar los timpanogramas multifrecuencia.
+
+En el plano admitancia, el eje horizontal representa G (siempre positiva, la energía disipada no puede ser negativa) y el eje vertical representa B (puede ser positiva o negativa según qué componente domine). La admitancia total Y es el vector que une el origen con el punto (G, B).
+
+:::diagram id="fig-plano-YGB" title="Plano admitancia: representación vectorial de Y = G + jB con los cuatro estados clínicos"
+Plano cartesiano G (horizontal) y B (vertical). Cuatro puntos representan estados clínicos distintos: oído normal (primer cuadrante, B moderada positiva), rigidez aumentada (B muy positiva, G baja), masa aumentada (B negativa, G baja), discontinuidad en resonancia (B = 0, G alta). Se muestran vectores Y para cada punto.
+
+```svg
+<svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="apv" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Ejes -->
+  <line x1="50" y1="230" x2="430" y2="230" stroke="currentColor" stroke-width="1.5" marker-end="url(#apv)"/>
+  <line x1="230" y1="400" x2="230" y2="25"  stroke="currentColor" stroke-width="1.5" marker-end="url(#apv)"/>
+
+  <!-- Etiquetas ejes -->
+  <text x="434" y="234" font-size="13" fill="currentColor">G</text>
+  <text x="212" y="22"  font-size="13" fill="currentColor">B</text>
+  <text x="214" y="248" font-size="11" fill="currentColor">0</text>
+
+  <!-- Etiquetas cuadrantes -->
+  <text x="340" y="120" font-size="9" fill="currentColor" opacity="0.5">B > 0</text>
+  <text x="340" y="132" font-size="9" fill="currentColor" opacity="0.5">rigidez domina</text>
+  <text x="340" y="340" font-size="9" fill="currentColor" opacity="0.5">B &lt; 0</text>
+  <text x="340" y="352" font-size="9" fill="currentColor" opacity="0.5">masa domina</text>
+
+  <!-- Línea B = 0 resonancia -->
+  <line x1="50" y1="230" x2="430" y2="230" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  <text x="52" y="226" font-size="8" fill="currentColor" opacity="0.5">resonancia</text>
+
+  <!-- PUNTO 1: Oído normal -->
+  <line x1="230" y1="230" x2="320" y2="140" stroke="currentColor" stroke-width="2" marker-end="url(#apv)" stroke-dasharray="5,3"/>
+  <circle cx="320" cy="140" r="6" fill="currentColor" opacity="0.9"/>
+  <text x="328" y="136" font-size="10" fill="currentColor">normal</text>
+  <text x="328" y="148" font-size="9" fill="currentColor" opacity="0.7">(B+ mod, G baja)</text>
+
+  <!-- PUNTO 2: Rigidez aumentada -->
+  <line x1="230" y1="230" x2="270" y2="60" stroke="currentColor" stroke-width="2" marker-end="url(#apv)" stroke-dasharray="5,3"/>
+  <circle cx="270" cy="60" r="6" fill="currentColor" opacity="0.9"/>
+  <text x="278" y="56" font-size="10" fill="currentColor">rigidez ↑</text>
+  <text x="278" y="68" font-size="9" fill="currentColor" opacity="0.7">(B++ alta, G baja)</text>
+  <text x="278" y="80" font-size="9" fill="currentColor" opacity="0.7">ej. otosclerosis</text>
+
+  <!-- PUNTO 3: Masa aumentada -->
+  <line x1="230" y1="230" x2="280" y2="350" stroke="currentColor" stroke-width="2" marker-end="url(#apv)" stroke-dasharray="5,3"/>
+  <circle cx="280" cy="350" r="6" fill="currentColor" opacity="0.9"/>
+  <text x="288" y="346" font-size="10" fill="currentColor">masa ↑</text>
+  <text x="288" y="358" font-size="9" fill="currentColor" opacity="0.7">(B negativa)</text>
+  <text x="288" y="370" font-size="9" fill="currentColor" opacity="0.7">ej. líquido OM</text>
+
+  <!-- PUNTO 4: Resonancia (discontinuidad) -->
+  <line x1="230" y1="230" x2="390" y2="230" stroke="currentColor" stroke-width="2" marker-end="url(#apv)"/>
+  <circle cx="390" cy="230" r="6" fill="currentColor" opacity="0.9"/>
+  <text x="370" y="220" font-size="10" fill="currentColor">resonancia</text>
+  <text x="355" y="248" font-size="9" fill="currentColor" opacity="0.7">B = 0, G máxima</text>
+  <text x="355" y="260" font-size="9" fill="currentColor" opacity="0.7">ej. discontinuidad</text>
+
+  <!-- Fórmulas -->
+  <text x="52" y="388" font-size="11" fill="currentColor">Y = G + jB     |Y| = √(G² + B²)</text>
+</svg>
+```
+:::
+
+Este plano muestra de un vistazo cuatro situaciones clínicas completamente distintas, cada una con una firma vectorial propia. Cuando más adelante analices los timpanogramas multifrecuencia, estarás leyendo esencialmente la posición de ese vector en este plano bajo distintas presiones.
+
+---
+
+## 2.5 ¿Por qué separar G y B y no usar solo |Y|?
+
+Es una pregunta legítima. Si ya tenemos la magnitud total |Y|, ¿para qué complicarlo con dos componentes?
+
+La respuesta es que dos sistemas pueden tener el mismo |Y| pero composiciones completamente distintas —y por tanto patologías distintas— si sus valores de G y B son diferentes. Usar solo |Y| sería como saber que alguien tiene 37°C de temperatura sin saber si está en reposo o haciendo ejercicio: el número es correcto, pero pierde información.
+
+:::example id="ej-mismo-modulo" title="Dos oídos con igual |Y| pero distinta composición"
+Oído A: G = 0.3, B = 0.4 → |Y| = √(0.09 + 0.16) = 0.5 mmho
+Oído B: G = 0.5, B = 0.0 → |Y| = √(0.25 + 0.00) = 0.5 mmho
+
+Ambos dan |Y| = 0.5 mmho. Sin embargo:
+- Oído A tiene B positiva → componente de rigidez presente → sistema normal o con leve rigidez.
+- Oído B tiene B = 0 → sistema en resonancia → sospecha de discontinuidad de cadena.
+
+Con solo |Y| ambos parecen iguales. Con G y B separados, son diagnósticos completamente distintos.
+:::
+
+:::warning id="warn-modulo-insuficiente"
+El timpanograma clásico de 226 Hz entrega esencialmente |Y|. Esto es suficiente para detectar patologías que cambian mucho la admitancia total (líquido, perforación). Pero para patologías donde G y B cambian en direcciones opuestas y el módulo queda similar al normal —como la discontinuidad de cadena— necesitas separar los componentes con una frecuencia de sonda que trabaje cerca de la resonancia del sistema (1000 Hz).
+:::
+
+---
+
+:::mnemonic id="mne-GB-resumen"
+**G → Gasta → disipa → siempre positiva → no cambia con la frecuencia.**
+**B → Bipolar → puede ser + o − → depende de si domina rigidez o masa → cambia con la frecuencia.**
+**B = 0 → Bullseye → resonancia → máxima transferencia de energía.**
+:::
+
+---
+
+:::question type="choice" id="q-partII-01"
+Un sistema tiene admitancia Y con B = −0.6 mmho. ¿Qué indica este valor?
+
+= Que el sistema está dominado por masa: la frecuencia del estímulo supera la frecuencia de resonancia. # Correcto. B negativa ocurre cuando f > f₀ y la inercia supera a la elasticidad.
+~ Que el sistema está dominado por rigidez. # La rigidez produce B positiva.
+~ Que el sistema no transmite energía. # B negativa no implica ausencia de transmisión, solo indica qué componente reactivo domina.
+~ Que la conductancia G también es negativa. # G es siempre positiva o cero; la energía disipada no puede ser negativa.
+:::
+
+---
+
+:::question type="true-false" id="q-partII-02"
+Dos sistemas con igual |Y| tienen necesariamente el mismo comportamiento clínico.
+
+= false # Dos sistemas pueden tener igual módulo pero diferente composición de G y B, lo que implica distintas patologías. El módulo solo es insuficiente para el diagnóstico diferencial.
+:::
+
+---
+
+:::question type="open" id="q-partII-03"
+Explica con una analogía cotidiana la diferencia entre conductancia G y susceptancia B positiva. ¿Por qué es clínicamente relevante distinguirlos?
+
+= G es como el calor que genera el freno de un auto: energía que se disipa sin posibilidad de recuperarla. B positiva es como el resorte de una suspensión: almacena energía al comprimirse y la devuelve al extenderse. Clínicamente, G refleja el amortiguamiento del sistema (fricción osicular) mientras B refleja qué componente reactivo domina. Distinguirlos permite saber si una patología aumenta la rigidez (B sube), la masa (B baja) o el amortiguamiento (G sube), lo que orienta el diagnóstico diferencial entre, por ejemplo, otosclerosis, efusión y discontinuidad de cadena.
+
+---
+
+# Parte III — Los componentes mecánicos del oído medio
+
+## 3.1 El oído medio no es un bloque: es tres cosas a la vez
+
+Hasta ahora hemos hablado de admitancia como si el oído medio fuera un objeto simple. En realidad es un sistema mecánico complejo donde tres propiedades físicas distintas coexisten y operan simultáneamente. Cada vez que la membrana timpánica recibe un sonido, las tres responden al mismo tiempo —pero de maneras diferentes y con pesos distintos según la frecuencia del estímulo.
+
+Imagina que intentas mover un bloque de madera sobre una mesa. Tres cosas se oponen a ese movimiento: la **fricción** del bloque contra la mesa (resistencia), la **rigidez** de cualquier resorte que tenga conectado (elasticidad), y el **peso** del bloque mismo (inercia o masa). El oído medio tiene exactamente esos tres elementos, solo que en vez de un bloque de madera, es la membrana y los osículos lo que se mueve.
+
+:::definition id="def-tres-componentes" multiple
+**Resistencia acústica (R)** | Oposición al movimiento que disipa energía de forma irreversible: fricción, viscosidad, amortiguamiento. No depende de la frecuencia. Se refleja en la conductancia G.
+**Reactancia de rigidez (Xs)** | Oposición generada por la elasticidad del sistema. Actúa como un resorte: mayor deformación, mayor fuerza de retorno. Xs = k/ω → **decrece con la frecuencia**. Domina a frecuencias bajas.
+**Reactancia de masa (Xm)** | Oposición generada por la inercia: una masa que ya está en reposo se resiste a moverse, y una que ya se mueve se resiste a detenerse. Xm = m·ω → **crece con la frecuencia**. Domina a frecuencias altas.
+:::
+
+La suma de Xs y Xm se llama **reactancia total (X)**. Cuando la frecuencia es baja, Xs domina y X es positiva. Cuando la frecuencia es alta, Xm domina y X es negativa. En el punto donde se igualan, X = 0: esa es la resonancia.
+
+---
+
+## 3.2 De dónde viene cada componente en el oído medio real
+
+No son abstracciones: cada componente tiene una fuente anatómica concreta. Conocerlas permite anticipar qué patologías afectan qué componente.
+
+:::diagram id="fig-anatomia-componentes" title="Origen anatómico de rigidez, masa y resistencia en el oído medio"
+Esquema simplificado del oído medio con membrana timpánica, martillo, yunque, estribo y ventana oval. Flechas y etiquetas indican las fuentes anatómicas de cada componente: rigidez (membrana tensa, ligamentos osiculares, colchón de aire del OM), masa (membrana + tres osículos), resistencia (articulaciones osiculares, viscosidad tisular).
+
+```svg
+<svg viewBox="0 0 540 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="aan" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Membrana timpánica (curva) -->
+  <path d="M80,80 Q95,160 80,240" stroke="currentColor" stroke-width="3" fill="none"/>
+  <text x="30" y="165" font-size="10" fill="currentColor" text-anchor="middle">membrana</text>
+  <text x="30" y="177" font-size="10" fill="currentColor" text-anchor="middle">timpánica</text>
+
+  <!-- Martillo -->
+  <line x1="80"  y1="160" x2="155" y2="130" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="155" cy="128" r="5" fill="currentColor"/>
+  <text x="115" y="120" font-size="9" fill="currentColor" text-anchor="middle">martillo</text>
+
+  <!-- Yunque -->
+  <line x1="155" y1="128" x2="210" y2="140" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="210" cy="140" r="5" fill="currentColor"/>
+  <text x="185" y="120" font-size="9" fill="currentColor" text-anchor="middle">yunque</text>
+
+  <!-- Estribo -->
+  <line x1="210" y1="140" x2="265" y2="160" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="265" cy="160" r="5" fill="currentColor"/>
+  <!-- Platina del estribo -->
+  <rect x="268" y="150" width="8" height="20" fill="currentColor" opacity="0.7"/>
+  <text x="265" y="143" font-size="9" fill="currentColor" text-anchor="middle">estribo</text>
+
+  <!-- Ventana oval -->
+  <ellipse cx="290" cy="160" rx="14" ry="20" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="320" y="145" font-size="9" fill="currentColor">ventana</text>
+  <text x="320" y="157" font-size="9" fill="currentColor">oval</text>
+
+  <!-- Colchón de aire OM -->
+  <path d="M80,80 Q180,50 290,80 L290,240 Q180,270 80,240 Z" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="175" y="68" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.6">cavidad del oído medio (aire)</text>
+
+  <!-- FLECHAS DE RIGIDEZ -->
+  <line x1="80" y1="100" x2="45" y2="80" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)" stroke-dasharray="3,2"/>
+  <text x="10" y="75" font-size="9" fill="currentColor">k:</text>
+  <text x="5"  y="87" font-size="8" fill="currentColor" opacity="0.8">membrana</text>
+
+  <line x1="175" y1="100" x2="175" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)" stroke-dasharray="3,2"/>
+  <text x="148" y="52" font-size="8" fill="currentColor">ligamentos</text>
+
+  <line x1="175" y1="200" x2="175" y2="260" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)" stroke-dasharray="3,2"/>
+  <text x="130" y="278" font-size="8" fill="currentColor">aire OM (k)</text>
+
+  <!-- FLECHAS DE MASA -->
+  <line x1="155" y1="148" x2="120" y2="200" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)"/>
+  <line x1="210" y1="158" x2="210" y2="210" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)"/>
+  <line x1="265" y1="175" x2="280" y2="220" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)"/>
+  <text x="80" y="230" font-size="9" fill="currentColor">m: osículos</text>
+  <text x="80" y="242" font-size="8" fill="currentColor" opacity="0.7">martillo + yunque + estribo</text>
+
+  <!-- FLECHAS DE RESISTENCIA -->
+  <line x1="182" y1="134" x2="220" y2="95" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)" stroke-dasharray="2,2"/>
+  <line x1="237" y1="150" x2="260" y2="105" stroke="currentColor" stroke-width="1.5" marker-end="url(#aan)" stroke-dasharray="2,2"/>
+  <text x="225" y="90" font-size="9" fill="currentColor">R: articulaciones</text>
+  <text x="225" y="102" font-size="8" fill="currentColor" opacity="0.7">(fricción, viscosidad)</text>
+
+  <!-- Leyenda -->
+  <line x1="360" y1="270" x2="390" y2="270" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="396" y="274" font-size="9" fill="currentColor">rigidez k</text>
+  <line x1="360" y1="285" x2="390" y2="285" stroke="currentColor" stroke-width="1.5"/>
+  <text x="396" y="289" font-size="9" fill="currentColor">masa m</text>
+  <line x1="360" y1="300" x2="390" y2="300" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="396" y="304" font-size="9" fill="currentColor">resistencia R</text>
+</svg>
+```
+:::
+
+Ahora la tabla cobra sentido anatómico directo:
+
+| Componente | Fuente anatómica | Patología que lo altera |
+|---|---|---|
+| **Rigidez k** | Membrana timpánica, ligamentos, aire del OM | Otosclerosis, timpanoesclerosis, líquido |
+| **Masa m** | Membrana + martillo + yunque + estribo | Líquido, colesteatoma, disrupción osicular |
+| **Resistencia R** | Articulaciones osiculares, tejidos blandos | Artritis osicular, fibrosis |
+
+---
+
+## 3.3 El modelo mecánico equivalente
+
+Los físicos y los ingenieros llevan más de un siglo representando sistemas mecánicos complejos como circuitos de elementos simples. El oído medio no es la excepción. Su comportamiento completo se puede modelar con tres elementos en serie: un **resorte** (rigidez), un **bloque de masa** y un **amortiguador**.
+
+:::diagram id="fig-modelo-mecanico" title="Modelo mecánico del oído medio: resorte (k), masa (m) y amortiguador (R) en serie"
+Sistema mecánico clásico con tres elementos en serie entre dos paredes fijas. De izquierda a derecha: pared fija, resorte ondulado etiquetado k, bloque central etiquetado m, amortiguador (cilindro-pistón) etiquetado R, pared fija. Una flecha de fuerza P(t) empuja el sistema desde la derecha. Debajo: ecuación de Newton y mapa de equivalencia con el oído medio.
+
+```svg
+<svg viewBox="0 0 540 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="amec" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Pared izquierda -->
+  <rect x="28" y="75" width="12" height="110" fill="currentColor" opacity="0.6"/>
+  <line x1="28" y1="78"  x2="14" y2="64"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="28" y1="95"  x2="14" y2="81"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="28" y1="112" x2="14" y2="98"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="28" y1="129" x2="14" y2="115" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="28" y1="146" x2="14" y2="132" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="28" y1="163" x2="14" y2="149" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="28" y1="180" x2="14" y2="166" stroke="currentColor" stroke-width="1.5"/>
+
+  <!-- Resorte (rigidez k) -->
+  <line x1="40" y1="130" x2="62" y2="130" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M62,130 L69,114 L76,146 L83,114 L90,146 L97,114 L104,146 L111,130"
+        stroke="currentColor" stroke-width="2.2" fill="none"/>
+  <line x1="111" y1="130" x2="135" y2="130" stroke="currentColor" stroke-width="1.5"/>
+  <text x="86"  y="108" font-size="12" fill="currentColor" text-anchor="middle" font-weight="bold">k</text>
+  <text x="86"  y="162" font-size="9"  fill="currentColor" text-anchor="middle">rigidez</text>
+  <text x="86"  y="173" font-size="8"  fill="currentColor" text-anchor="middle" opacity="0.6">membrana + ligamentos</text>
+
+  <!-- Masa (bloque) -->
+  <rect x="135" y="100" width="90" height="60" fill="none" stroke="currentColor" stroke-width="2.2"/>
+  <text x="180" y="127" font-size="14" fill="currentColor" text-anchor="middle" font-weight="bold">m</text>
+  <text x="180" y="145" font-size="9"  fill="currentColor" text-anchor="middle">masa</text>
+  <text x="180" y="178" font-size="8"  fill="currentColor" text-anchor="middle" opacity="0.6">osículos + membrana</text>
+
+  <!-- Amortiguador (resistencia R) -->
+  <line x1="225" y1="130" x2="252" y2="130" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="252" y="113" width="64" height="34" fill="none" stroke="currentColor" stroke-width="2.2"/>
+  <line x1="272" y1="113" x2="272" y2="147" stroke="currentColor" stroke-width="3.5"/>
+  <line x1="316" y1="130" x2="343" y2="130" stroke="currentColor" stroke-width="1.5"/>
+  <text x="284" y="108" font-size="12" fill="currentColor" text-anchor="middle" font-weight="bold">R</text>
+  <text x="284" y="162" font-size="9"  fill="currentColor" text-anchor="middle">resistencia</text>
+  <text x="284" y="173" font-size="8"  fill="currentColor" text-anchor="middle" opacity="0.6">articulaciones</text>
+
+  <!-- Pared derecha -->
+  <rect x="343" y="75" width="12" height="110" fill="currentColor" opacity="0.6"/>
+  <line x1="355" y1="78"  x2="369" y2="64"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="355" y1="95"  x2="369" y2="81"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="355" y1="112" x2="369" y2="98"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="355" y1="129" x2="369" y2="115" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="355" y1="146" x2="369" y2="132" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="355" y1="163" x2="369" y2="149" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="355" y1="180" x2="369" y2="166" stroke="currentColor" stroke-width="1.5"/>
+
+  <!-- Flecha de fuerza P(t) -->
+  <line x1="490" y1="130" x2="362" y2="130" stroke="currentColor" stroke-width="2.5" marker-end="url(#amec)"/>
+  <text x="500" y="122" font-size="12" fill="currentColor">P(t)</text>
+  <text x="496" y="136" font-size="9"  fill="currentColor">presión</text>
+  <text x="496" y="148" font-size="9"  fill="currentColor">sonora</text>
+
+  <!-- Ecuación -->
+  <text x="195" y="218" font-size="12" fill="currentColor" text-anchor="middle">m·ẍ + R·ẋ + k·x = P(t)</text>
+  <text x="195" y="233" font-size="9"  fill="currentColor" text-anchor="middle" opacity="0.6">inercia + fricción + elasticidad = fuerza aplicada</text>
+
+  <!-- Equivalencias -->
+  <text x="86"  y="255" font-size="9" fill="currentColor" text-anchor="middle">k·x → Xs → B+</text>
+  <text x="180" y="255" font-size="9" fill="currentColor" text-anchor="middle">m·ẍ → Xm → B−</text>
+  <text x="284" y="255" font-size="9" fill="currentColor" text-anchor="middle">R·ẋ → R → G</text>
+</svg>
+```
+:::
+
+La ecuación m{m·ẍ + R·ẋ + k·x = P(t)} es la ley de Newton aplicada al sistema. Cada término tiene su equivalente en el plano admitancia que vimos en la Parte II: la rigidez genera B positiva, la masa genera B negativa, y la resistencia genera G.
+
+---
+
+## 3.4 Cómo cambia cada componente con la frecuencia
+
+Este es el punto más importante de la Parte III y la razón por la que 226 Hz y 1000 Hz no son intercambiables.
+
+La resistencia R no cambia con la frecuencia: siempre disipa la misma proporción de energía independientemente de si el sonido es grave o agudo. Pero las reactancias son completamente distintas: una crece mientras la otra decrece, y se cruzan exactamente en la resonancia.
+
+:::math id="math-reactancias"
+Xs = k / ω       (rigidez: decrece al subir f)
+Xm = m · ω      (masa: crece al subir f)
+X  = Xm − Xs    (reactancia neta)
+X = 0  →  resonancia  →  ω₀ = √(k/m)
+:::
+
+:::diagram id="fig-reactancias-cruce" title="Reactancia de rigidez (Xs) y de masa (Xm) en función de la frecuencia — cruce en f₀"
+Gráfica con eje horizontal de frecuencia y eje vertical de reactancia. Dos curvas: Xs decrece hiperbólicamente desde valores altos a bajas frecuencias; Xm crece linealmente desde cero. Se cruzan en f₀ ≈ 800–1000 Hz. Las posiciones de 226 Hz y 1000 Hz están marcadas. Zona izquierda al cruce etiquetada "domina rigidez (B+)"; zona derecha etiquetada "domina masa (B−)".
+
+```svg
+<svg viewBox="0 0 540 310" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arcX" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+    <marker id="arcY" markerWidth="8" markerHeight="8" refX="3" refY="0" orient="auto">
+      <path d="M0,8 L6,8 L3,0 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Ejes -->
+  <line x1="55" y1="240" x2="510" y2="240" stroke="currentColor" stroke-width="1.5" marker-end="url(#arcX)"/>
+  <line x1="55" y1="260" x2="55"  y2="30"  stroke="currentColor" stroke-width="1.5" marker-end="url(#arcY)"/>
+  <text x="514" y="244" font-size="12" fill="currentColor">f</text>
+  <text x="32"  y="28"  font-size="11" fill="currentColor">X</text>
+
+  <!-- Línea X = 0 -->
+  <line x1="55" y1="240" x2="510" y2="240" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Marcas frecuencia -->
+  <text x="120" y="255" font-size="9" fill="currentColor" text-anchor="middle">226</text>
+  <text x="290" y="255" font-size="9" fill="currentColor" text-anchor="middle">800</text>
+  <text x="350" y="255" font-size="9" fill="currentColor" text-anchor="middle">1000</text>
+  <text x="460" y="255" font-size="9" fill="currentColor" text-anchor="middle">1400 Hz</text>
+
+  <!-- Curva Xs — hipérbola decreciente (rigidez) -->
+  <path d="M68,45 C80,50 95,65 120,90 C145,115 170,145 200,170 C225,190 255,210 285,225 C310,236 340,241 510,243"
+        stroke="currentColor" stroke-width="2.2" fill="none" stroke-dasharray="7,3"/>
+
+  <!-- Curva Xm — creciente lineal (masa) -->
+  <path d="M68,238 C100,235 150,228 200,218 C240,209 265,200 290,188 C320,173 355,152 400,122 C430,102 460,80 505,50"
+        stroke="currentColor" stroke-width="2.2" fill="none"/>
+
+  <!-- Punto de cruce (f₀) -->
+  <circle cx="290" cy="207" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <line x1="290" y1="207" x2="290" y2="240" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="268" y="202" font-size="10" fill="currentColor">f₀</text>
+  <text x="265" y="272" font-size="9"  fill="currentColor">resonancia</text>
+
+  <!-- Marca 226 Hz -->
+  <line x1="120" y1="35" x2="120" y2="240" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3,4" opacity="0.6"/>
+  <circle cx="120" cy="90" r="4" fill="currentColor"/>
+  <text x="65"  y="32" font-size="9" fill="currentColor">sonda 226 Hz</text>
+  <text x="65"  y="43" font-size="8" fill="currentColor" opacity="0.6">Xs grande → B+ → rigidez domina</text>
+
+  <!-- Marca 1000 Hz -->
+  <line x1="350" y1="35" x2="350" y2="240" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3,4" opacity="0.6"/>
+  <circle cx="350" cy="152" r="4" fill="currentColor"/>
+  <text x="355" y="32" font-size="9" fill="currentColor">sonda 1000 Hz</text>
+  <text x="355" y="43" font-size="8" fill="currentColor" opacity="0.6">cerca de f₀ → sensible a desplazamientos</text>
+
+  <!-- Etiquetas zonas -->
+  <text x="170" y="285" font-size="10" fill="currentColor" text-anchor="middle">◀ domina rigidez (B+)</text>
+  <text x="420" y="285" font-size="10" fill="currentColor" text-anchor="middle">domina masa (B−) ▶</text>
+
+  <!-- Leyenda -->
+  <line x1="60"  y1="300" x2="90"  y2="300" stroke="currentColor" stroke-width="2.2" stroke-dasharray="7,3"/>
+  <text x="95"  y="304" font-size="10" fill="currentColor">Xs — rigidez</text>
+  <line x1="200" y1="300" x2="230" y2="300" stroke="currentColor" stroke-width="2.2"/>
+  <text x="235" y="304" font-size="10" fill="currentColor">Xm — masa</text>
+</svg>
+```
+:::
+
+La posición de la sonda en esta gráfica define todo. A **226 Hz** estamos muy a la izquierda del cruce: Xs es mucho mayor que Xm, por lo que la rigidez domina completamente la respuesta. Cualquier patología que modifique la rigidez (otosclerosis, líquido, timpanoesclerosis) produce un cambio grande y visible. Pero una patología que solo cambie la masa o la posición de f₀ puede no verse.
+
+A **1000 Hz** estamos cerca del cruce: las dos reactancias son comparables en magnitud, y el sistema es muy sensible a desplazamientos de f₀. Una discontinuidad que baja f₀ a ~800 Hz hace que a 1000 Hz ya estemos por encima de la resonancia → Xm domina → B se vuelve negativa → patrón en W.
+
+:::mnemonic id="mne-reactancias"
+**Xs = k/ω → divide por ω → a más frecuencia, menos Xs → la rigidez "se ablanda" con la velocidad.**
+**Xm = m·ω → multiplica por ω → a más frecuencia, más Xm → la masa "se endurece" con la velocidad.**
+Puedes recordarlo así: **la rigidez odia las frecuencias altas, la masa las ama** (en términos de oposición).
+:::
+
+---
+
+## 3.5 Cada patología tiene su huella
+
+Ahora que los tres componentes tienen nombre, origen anatómico y comportamiento frecuencial, se puede leer la tabla clínica de forma comprensiva:
+
+:::comparison id="comp-patologias-componentes" title="Efecto de cada patología sobre los componentes mecánicos"
+| Patología | k (rigidez) | m (masa) | R (resistencia) | Efecto neto |
+|---|---|---|---|---|
+| **Otosclerosis** | ↑↑ fijación del estribo | — | leve ↑ | f₀ sube, B+ alta, tipo As a 226 Hz |
+| **Timpanoesclerosis** | ↑↑ membrana rígida | — | ↑ | Igual que otosclerosis, más severo |
+| **Líquido en OM** | ↑ (aire reemplazado) | ↑↑ | ↑↑ | f₀ baja, tipo B plano en ambas sondas |
+| **Discontinuidad osicular** | ↓↓ pierde anclaje | ↓ pierde osículos | leve ↓ | f₀ cae a ~800 Hz, W en B a 1000 Hz |
+| **Membrana flácida** | ↓↓ | — | — | B+ muy alta, hipercompliance a 226 Hz |
+:::
+
+:::warning id="warn-liquido-doble"
+El líquido sube tanto k (reemplaza el aire compresible por líquido incompresible) como m (agrega masa). Los dos efectos van en direcciones opuestas para f₀ —k la sube, m la baja— pero el amortiguamiento que agrega aplana la resonancia completamente. El resultado neto es un sistema tan amortiguado que no resuena en ninguna frecuencia audible: tipo B independientemente de la sonda.
+:::
+
+---
+
+:::question type="choice" id="q-partIII-01"
+¿Por qué la reactancia de rigidez Xs disminuye al aumentar la frecuencia?
+
+= Porque Xs = k/ω: al aumentar ω, el denominador crece y Xs cae. A frecuencias altas el resorte no tiene tiempo de oponerse al movimiento. # Correcto. La rigidez opone resistencia al desplazamiento, pero a frecuencias muy altas el sistema oscila tan rápido que el resorte apenas alcanza a responder.
+~ Porque la masa aumenta con la frecuencia y neutraliza la rigidez. # La masa y la rigidez son parámetros independientes del sistema, no se neutralizan entre sí directamente.
+~ Porque la resistencia R absorbe la reactancia de rigidez a altas frecuencias. # R y Xs son componentes independientes. R no absorbe Xs.
+~ Porque el aire del oído medio se comprime más a frecuencias altas. # La compresión del aire contribuye a k, que es constante. No es un efecto frecuencial de Xs.
+:::
+
+---
+
+:::question type="choice" id="q-partIII-02"
+Una otosclerosis fija el estribo aumentando la rigidez del sistema. ¿Qué ocurre con f₀?
+
+= f₀ sube, porque f₀ = 1/(2π)·√(k/m) y al aumentar k el cociente k/m crece. # Correcto. Mayor rigidez desplaza la resonancia hacia frecuencias más altas, alejándola del rango de la sonda de 1000 Hz.
+~ f₀ baja, porque el sistema se vuelve más pesado. # La otosclerosis no agrega masa significativa, solo aumenta rigidez.
+~ f₀ no cambia, porque la resonancia depende solo de la masa. # f₀ depende de ambos: k y m. Un cambio en cualquiera de los dos desplaza f₀.
+~ f₀ desaparece, porque el sistema queda completamente rígido. # Un sistema con rigidez muy alta tiene f₀ muy alta, pero sigue teniendo resonancia.
+:::
+
+---
+
+:::question type="open" id="q-partIII-03"
+Explica por qué el líquido en el oído medio produce un timpanograma tipo B tanto a 226 Hz como a 1000 Hz, aunque los efectos del líquido sobre k y m van en direcciones opuestas para f₀.
+
+= El líquido aumenta k (reemplaza el aire compresible por un fluido prácticamente incompresible) y también aumenta m (agrega masa al sistema). Aunque estos efectos van en direcciones opuestas sobre f₀, el efecto dominante del líquido es aumentar masivamente el amortiguamiento R (el líquido es viscoso y disipa energía). Un sistema con amortiguamiento muy alto no exhibe un pico de resonancia definido en ninguna frecuencia: la curva de admitancia queda plana y baja independientemente de la sonda usada. Por eso ambas sondas dan tipo B.
+
+---
+
+# Parte IV — La frecuencia de resonancia
+
+## 4.1 La resonancia es el punto de máxima eficiencia
+
+Todo sistema mecánico tiene una frecuencia a la que responde de manera especialmente amplia: la **frecuencia de resonancia**. No es algo raro ni patológico, es una propiedad universal. Una cuerda de guitarra pulsada, un columpio empujado en el momento preciso, un puente bajo viento rítmico: todos resuenan cuando la frecuencia del estímulo coincide con su frecuencia natural.
+
+Lo que hace especial a la resonancia en términos de energía es que en ese punto las dos reactancias —rigidez y masa— se cancelan mutuamente. Xs tira hacia un lado, Xm tira hacia el otro, y en resonancia tiran con igual fuerza en sentidos opuestos: el resultado neto es cero. La única oposición que queda es la resistencia R, y por eso la admitancia alcanza su valor máximo exactamente ahí.
+
+:::key-concept id="kc-resonancia-def"
+En resonancia: Xs = Xm → reactancia neta X = 0 → B = 0 → |Y| = G (máximo).
+El sistema acepta energía con máxima eficiencia. Toda la admitancia es conductancia pura: no hay almacenamiento, solo disipación o transmisión hacia la cóclea.
+:::
+
+---
+
+## 4.2 Cómo se calcula f₀
+
+La condición de resonancia es simplemente que Xs = Xm. Igualando las dos expresiones de la Parte III:
+
+:::math id="math-resonancia"
+Xs = Xm
+k/ω₀ = m·ω₀
+ω₀² = k/m
+ω₀ = √(k/m)
+f₀ = 1/(2π) · √(k/m)
+Oído medio normal: f₀ ≈ 800 – 1000 Hz
+:::
+
+Esta ecuación es sencilla pero poderosa. Tiene solo dos variables: k y m. Cualquier patología que cambie alguna de las dos desplaza f₀, y ese desplazamiento puede revelar la patología si se usa la sonda correcta.
+
+:::mnemonic id="mne-f0"
+**f₀ sube si sube k → más rigidez → resorte más fuerte → oscila más rápido.**
+**f₀ baja si sube m → más masa → más pesado → oscila más lento.**
+Piensa en un columpio: acortar las cuerdas (más rigidez) lo hace oscilar más rápido. Sentar a alguien más pesado (más masa) lo hace oscilar más lento.
+:::
+
+---
+
+## 4.3 La curva de admitancia y la posición de las sondas
+
+La siguiente gráfica muestra cómo varía |Y| a lo largo del espectro de frecuencias para el oído normal. Hay un pico claro en f₀. Las dos sondas clínicas operan en puntos muy distintos de esa curva.
+
+:::diagram id="fig-resonancia-curva" title="Admitancia |Y| vs. frecuencia — posición de las sondas clínicas"
+Gráfica de |Y| versus frecuencia con curva de campana asimétrica. Pico en f₀ ≈ 900 Hz. Sonda de 226 Hz marcada en la zona de pendiente ascendente dominada por rigidez; sonda de 1000 Hz marcada cerca del pico. Áreas sombreadas indican zona de dominio de rigidez y de masa. Se muestran tres curvas superpuestas: oído normal, rigidez aumentada (f₀ desplazada a la derecha), masa aumentada (f₀ desplazada a la izquierda).
+
+```svg
+<svg viewBox="0 0 540 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ares" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+    <marker id="aresY" markerWidth="8" markerHeight="8" refX="3" refY="0" orient="auto">
+      <path d="M0,8 L6,8 L3,0 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Ejes -->
+  <line x1="55" y1="255" x2="510" y2="255" stroke="currentColor" stroke-width="1.5" marker-end="url(#ares)"/>
+  <line x1="55" y1="265" x2="55"  y2="25"  stroke="currentColor" stroke-width="1.5" marker-end="url(#aresY)"/>
+  <text x="514" y="259" font-size="11" fill="currentColor">f</text>
+  <text x="32"  y="24"  font-size="11" fill="currentColor">|Y|</text>
+
+  <!-- Marcas frecuencia -->
+  <text x="108" y="270" font-size="8" fill="currentColor" text-anchor="middle">226</text>
+  <text x="230" y="270" font-size="8" fill="currentColor" text-anchor="middle">600</text>
+  <text x="310" y="270" font-size="8" fill="currentColor" text-anchor="middle">800</text>
+  <text x="365" y="270" font-size="8" fill="currentColor" text-anchor="middle">1000</text>
+  <text x="450" y="270" font-size="8" fill="currentColor" text-anchor="middle">1300 Hz</text>
+
+  <!-- Curva normal — pico en ~900 Hz -->
+  <path d="M68,248 C90,244 120,234 155,218 C185,204 215,185 248,160 C272,140 295,112 320,78 C335,60 348,44 362,46 C376,50 392,68 412,98 C432,128 452,168 472,202 C488,224 500,242 512,250"
+        stroke="currentColor" stroke-width="2.5" fill="none"/>
+  <text x="362" y="36" font-size="9" fill="currentColor" text-anchor="middle">normal</text>
+
+  <!-- Curva rigidez aumentada — pico desplazado a la derecha (~1200 Hz) -->
+  <path d="M68,252 C95,250 130,245 170,236 C205,228 240,215 270,197 C295,180 318,155 340,122 C358,96 375,72 400,60 C415,55 428,60 445,78 C462,98 475,130 490,180 C500,208 508,235 514,252"
+        stroke="currentColor" stroke-width="1.8" fill="none" stroke-dasharray="6,3"/>
+  <text x="408" y="50" font-size="9" fill="currentColor">k↑ (rigidez ↑)</text>
+  <text x="408" y="62" font-size="8" fill="currentColor" opacity="0.6">f₀ sube</text>
+
+  <!-- Curva masa aumentada — pico desplazado a la izquierda (~600 Hz) -->
+  <path d="M68,248 C85,242 108,228 135,205 C158,184 185,155 210,118 C228,92 242,66 258,58 C272,52 285,60 305,85 C325,112 345,150 368,188 C390,220 420,242 480,252"
+        stroke="currentColor" stroke-width="1.8" fill="none" stroke-dasharray="3,3"/>
+  <text x="248" y="46" font-size="9" fill="currentColor">m↑ (masa ↑)</text>
+  <text x="248" y="58" font-size="8" fill="currentColor" opacity="0.6">f₀ baja</text>
+
+  <!-- Líneas verticales sondas -->
+  <line x1="108" y1="30" x2="108" y2="255" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,4" opacity="0.7"/>
+  <circle cx="108" cy="222" r="5" fill="currentColor"/>
+  <text x="64"  y="26" font-size="9" fill="currentColor">226 Hz</text>
+  <text x="64"  y="38" font-size="8" fill="currentColor" opacity="0.6">zona rigidez</text>
+
+  <line x1="365" y1="30" x2="365" y2="255" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,4" opacity="0.7"/>
+  <circle cx="365" cy="65" r="5" fill="currentColor"/>
+  <text x="368" y="26" font-size="9" fill="currentColor">1000 Hz</text>
+  <text x="368" y="38" font-size="8" fill="currentColor" opacity="0.6">zona resonancia</text>
+
+  <!-- Leyenda -->
+  <line x1="60"  y1="295" x2="90"  y2="295" stroke="currentColor" stroke-width="2.5"/>
+  <text x="95"  y="299" font-size="9" fill="currentColor">normal</text>
+  <line x1="165" y1="295" x2="195" y2="295" stroke="currentColor" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="200" y="299" font-size="9" fill="currentColor">rigidez ↑</text>
+  <line x1="280" y1="295" x2="310" y2="295" stroke="currentColor" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="315" y="299" font-size="9" fill="currentColor">masa ↑</text>
+
+  <!-- Etiquetas zona dominio -->
+  <text x="175" y="250" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.5">◀ rigidez domina</text>
+  <text x="445" y="250" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.5">masa domina ▶</text>
+</svg>
+```
+:::
+
+Las tres curvas cuentan la historia completa. A **226 Hz**, las tres curvas tienen valores muy distintos entre sí: el sistema con rigidez aumentada ya da una admitancia notablemente más baja que el normal, y el de masa aumentada da un valor intermedio. La sonda de 226 Hz discrimina bien los cambios de rigidez.
+
+A **1000 Hz**, los tres picos están en posiciones diferentes: el normal tiene su pico justo ahí, el de rigidez aumentada todavía no llegó al pico (está subiendo), y el de masa aumentada ya pasó su pico (está bajando). Esto es exactamente lo que genera los patrones diagnósticos distintos con susceptancia B positiva, cero o negativa.
+
+---
+
+## 4.4 El desplazamiento de f₀ como huella diagnóstica
+
+La tabla siguiente muestra cómo cada condición clínica desplaza f₀ y qué se ve en cada sonda:
+
+:::comparison id="comp-f0-desplazamiento" title="Desplazamiento de f₀ según patología y efecto en cada sonda"
+| Condición | k | m | f₀ estimada | A 226 Hz | A 1000 Hz |
+|---|---|---|---|---|---|
+| **Oído normal** | normal | normal | ~900 Hz | Y normal, B+ mod | Y máxima, B ≈ 0 |
+| **Otosclerosis** | ↑↑ | — | > 1200 Hz | Y baja, B++ alta | Y baja, B++ alta |
+| **Líquido OM** | ↑ | ↑↑ | variable / amortiguado | tipo B plano | tipo B más plano |
+| **Discontinuidad** | ↓↓ | ↓ | ~700–800 Hz | Y alta, B+ alta | Y alta, B cambia signo → W |
+:::
+
+:::mnemonic id="mne-desplazamiento"
+**Rigidez sube → f₀ se aleja de 1000 Hz hacia la derecha → a 1000 Hz estamos "antes del pico" → B positiva alta.**
+**Masa sube → f₀ se aleja de 1000 Hz hacia la izquierda → a 1000 Hz estamos "después del pico" → B negativa.**
+**Discontinuidad → f₀ cae justo en 1000 Hz → B cruza el cero durante el barrido → patrón en W.**
+:::
+
+---
+
+## 4.5 Por qué la resonancia importa más de lo que parece
+
+Hay una consecuencia clínica que muchos estudiantes no anticipan al inicio: el oído normal no tiene su máxima eficiencia de transmisión a 1000 Hz —la tiene cerca de f₀, que está alrededor de 900 Hz. Eso significa que el oído medio está diseñado por evolución para transmitir con máxima eficiencia en el rango del habla, exactamente donde necesita funcionar mejor.
+
+:::aside id="aside-evolucion-resonancia" title="La resonancia del oído medio y el habla humana"
+La frecuencia de resonancia del oído medio humano —entre 800 y 1000 Hz— no es una coincidencia. Las frecuencias fundamentales y los primeros formantes del habla humana caen precisamente en ese rango. El oído medio evolucionó para ser más eficiente donde más importa: en las frecuencias que permiten distinguir el habla. Cuando una patología desplaza f₀ fuera de ese rango, la consecuencia no es solo un cambio en el timpanograma: es una pérdida real de eficiencia auditiva en el rango del habla.
+:::
+
+---
+
+:::question type="choice" id="q-partIV-01"
+Un paciente tiene f₀ estimada en 1400 Hz. ¿Qué indica esto sobre el sistema del oído medio?
+
+= Que la rigidez aumentó (k↑), elevando f₀ por encima del rango normal. # Correcto. f₀ = 1/(2π)·√(k/m): si k sube, f₀ sube. Este patrón es típico de otosclerosis o timpanoesclerosis.
+~ Que la masa aumentó (m↑), elevando f₀. # Mayor masa disminuye f₀, no la aumenta.
+~ Que el sistema tiene más amortiguamiento. # El amortiguamiento (R) afecta la altura del pico de resonancia pero no desplaza f₀.
+~ Que hay líquido en el oído medio. # El líquido puede aumentar masa y amortiguamiento, lo que tiende a bajar f₀ y aplanar el pico, no a subirlo.
+:::
+
+---
+
+:::question type="choice" id="q-partIV-02"
+¿Por qué en resonancia la admitancia |Y| alcanza su valor máximo?
+
+= Porque Xs y Xm se cancelan mutuamente (X = 0), eliminando la reactancia total. Solo queda R, y la admitancia es G = 1/R, que es el máximo posible. # Correcto. Sin reactancia que se oponga al movimiento, el sistema es tan móvil como lo permite su fricción.
+~ Porque la frecuencia coincide con la frecuencia de la sonda clínica. # La resonancia es una propiedad del sistema, independiente de la frecuencia de sonda elegida.
+~ Porque la resistencia R disminuye en resonancia. # R es independiente de la frecuencia. No cambia en resonancia.
+~ Porque la membrana timpánica vibra con mayor amplitud a toda frecuencia. # La amplitud máxima solo ocurre en f₀, no en todas las frecuencias.
+:::
+
+---
+
+:::question type="true-false" id="q-partIV-03"
+Una discontinuidad de cadena osicular eleva f₀ porque se pierde masa del sistema.
+
+= false # La discontinuidad pierde masa osicular (lo que subiría f₀) pero pierde aún más rigidez al desacoplar los ligamentos y articulaciones. La caída de k domina sobre la caída de m, y f₀ desciende hacia ~700–900 Hz, no sube.
+:::
+
+---
+
+# Parte V — El timpanograma: qué mide y cómo
+
+## 5.1 Del concepto físico al instrumento
+
+Las cuatro partes anteriores construyeron el modelo físico del oído medio: energía que se refleja o absorbe, admitancia con sus componentes G y B, tres elementos mecánicos con sus comportamientos frecuenciales, y una frecuencia de resonancia que se desplaza con la patología. Ahora toca ver cómo el impedanciómetro **interroga** todo ese sistema desde afuera, sin abrirlo ni tocarlo.
+
+El instrumento no "ve" el oído medio directamente. Lo que hace es algo más elegante: envía una señal conocida, mide cuánto de esa señal regresa, y calcula la admitancia del sistema a partir de esa diferencia. Es exactamente el mismo principio con el que un radar detecta un avión: lo que importa no es la señal emitida, sino la proporción que rebota.
+
+:::definition id="def-instrumento" multiple
+**Tono sonda** | Frecuencia pura y constante que el instrumento emite hacia la membrana timpánica durante todo el barrido. Define desde qué punto del espectro se interroga el sistema. Frecuencias clínicas habituales: 226 Hz (adultos), 1000 Hz (lactantes y diagnóstico diferencial), 678 Hz (intermedia).
+**Barrido de presión** | Variación lenta y controlada de la presión estática del canal auditivo (de +200 a −400 daPa). Modifica la tensión de la membrana timpánica y por tanto su rigidez k, desplazando temporalmente f₀ a lo largo del barrido.
+**Señal de referencia** | El instrumento conoce exactamente cuánta energía emite. Cualquier diferencia entre lo emitido y lo recibido de vuelta equivale a energía absorbida por el sistema → admitancia.
+:::
+
+---
+
+## 5.2 Qué hace el barrido de presión a la membrana
+
+Este es el mecanismo central del timpanograma y merece explicación cuidadosa. El barrido de presión no genera sonido: cambia la presión estática del canal, como si se inflara o desinflara lentamente el espacio frente a la membrana.
+
+Cuando la presión del canal es **mayor** que la del oído medio, la membrana se empuja hacia adentro: está precomprimida, tensa, con rigidez artificialmente aumentada → responde poco al tono sonda → admitancia baja.
+
+Cuando la presión del canal es **menor** que la del oído medio, la membrana se empuja hacia afuera: también está desplazada de su posición neutra → también responde poco.
+
+Cuando la presión del canal **iguala** la del oído medio: la membrana está en su posición de reposo, sin gradiente de presión que la desvíe → máxima movilidad → admitancia máxima → **pico del timpanograma**.
+
+:::key-concept id="kc-pico-tpp"
+El pico del timpanograma ocurre en la presión que iguala la presión del oído medio. Su posición horizontal es el TPP (Tympanometric Peak Pressure) y es la estimación clínica de la presión real del oído medio.
+:::
+
+:::mnemonic id="mne-tpp"
+**TPP = presión del oído medio estimada desde afuera.**
+Piensa en equilibrar una puerta giratoria: solo gira libremente cuando la presión de ambos lados es igual. El timpanograma busca ese punto de equilibrio de la membrana.
+:::
+
+---
+
+:::diagram id="fig-mecanismo-barrido" title="Efecto del barrido de presión sobre la membrana: tres estados durante el barrido"
+Tres paneles. (1) Presión canal alta → membrana desplazada hacia adentro, rígida, Y baja. (2) Presión canal = presión OM → membrana en reposo, Y máxima, pico del timpanograma. (3) Presión canal baja → membrana desplazada hacia afuera, rígida, Y baja. Debajo, curva timpanograma con los tres puntos marcados.
+
+```svg
+<svg viewBox="0 0 540 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="abm" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <line x1="180" y1="10" x2="180" y2="200" stroke="currentColor" stroke-width="1" stroke-dasharray="3,4" opacity="0.3"/>
+  <line x1="360" y1="10" x2="360" y2="200" stroke="currentColor" stroke-width="1" stroke-dasharray="3,4" opacity="0.3"/>
+  <text x="90" y="16" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">P canal &gt; P OM (+200)</text>
+  <rect x="20" y="45" width="50" height="110" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M70,50 Q55,100 70,155" stroke="currentColor" stroke-width="3" fill="none"/>
+  <rect x="70" y="45" width="80" height="110" fill="currentColor" opacity="0.03" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="42" y1="100" x2="62" y2="100" stroke="currentColor" stroke-width="2" marker-end="url(#abm)"/>
+  <text x="28" y="96" font-size="8" fill="currentColor">P↑</text>
+  <path d="M25,130 Q28,125 31,130 Q34,135 37,130" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <text x="25" y="145" font-size="8" fill="currentColor" opacity="0.6">Y baja</text>
+  <text x="90" y="175" font-size="9" fill="currentColor" text-anchor="middle">membrana tensa</text>
+  <text x="90" y="187" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">desplazada hacia OM</text>
+  <text x="270" y="16" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">P canal = P OM — pico</text>
+  <rect x="200" y="45" width="50" height="110" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="250" y1="50" x2="250" y2="155" stroke="currentColor" stroke-width="3"/>
+  <rect x="250" y="45" width="80" height="110" fill="currentColor" opacity="0.03" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M205,115 Q210,100 215,115 Q220,130 225,115 Q230,100 235,115 Q240,130 245,115" stroke="currentColor" stroke-width="1.8" fill="none"/>
+  <text x="225" y="145" font-size="8" fill="currentColor" text-anchor="middle">Y maxima</text>
+  <text x="270" y="175" font-size="9" fill="currentColor" text-anchor="middle">membrana libre</text>
+  <text x="270" y="187" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">posicion de reposo</text>
+  <text x="450" y="16" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">P canal &lt; P OM (-400)</text>
+  <rect x="380" y="45" width="50" height="110" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M430,50 Q445,100 430,155" stroke="currentColor" stroke-width="3" fill="none"/>
+  <rect x="430" y="45" width="80" height="110" fill="currentColor" opacity="0.03" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="478" y1="100" x2="448" y2="100" stroke="currentColor" stroke-width="2" marker-end="url(#abm)"/>
+  <text x="482" y="96" font-size="8" fill="currentColor">P↓</text>
+  <path d="M385,130 Q388,125 391,130 Q394,135 397,130" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <text x="400" y="145" font-size="8" fill="currentColor" opacity="0.6">Y baja</text>
+  <text x="450" y="175" font-size="9" fill="currentColor" text-anchor="middle">membrana tensa</text>
+  <text x="450" y="187" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">desplazada hacia CAE</text>
+  <line x1="40" y1="290" x2="505" y2="290" stroke="currentColor" stroke-width="1.2"/>
+  <text x="40"  y="306" font-size="8" fill="currentColor">-400</text>
+  <text x="248" y="306" font-size="8" fill="currentColor">0</text>
+  <text x="468" y="306" font-size="8" fill="currentColor">+200 daPa</text>
+  <path d="M55,288 C90,286 140,280 185,265 C210,255 228,238 245,215 C252,200 268,215 285,238 C305,265 355,280 405,286 C440,288 475,289 500,290" stroke="currentColor" stroke-width="2" fill="none"/>
+  <circle cx="265" cy="212" r="4" fill="currentColor"/>
+  <line x1="90"  y1="200" x2="90"  y2="268" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <line x1="270" y1="200" x2="265" y2="212" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <line x1="450" y1="200" x2="460" y2="286" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <text x="268" y="206" font-size="8" fill="currentColor">TPP</text>
+</svg>
+```
+:::
+
+---
+
+## 5.3 Los tres parámetros del timpanograma
+
+Un timpanograma no es solo una curva bonita: cada uno de sus parámetros geométricos tiene un significado físico preciso que deriva directamente de la mecánica del oído medio.
+
+:::definition id="def-parametros" multiple
+**Amplitud (peak Y)** | Admitancia máxima en el pico. Refleja cuánta energía acepta el sistema en su estado óptimo. Normal: 0.3–1.6 mmho en adultos a 226 Hz. Alta → poca rigidez (hipercompliance). Baja → mucha rigidez o amortiguamiento.
+**TPP (Tympanometric Peak Pressure)** | Presión a la que ocurre el pico. Estima la presión del oído medio. Normal: entre −100 y +50 daPa. Negativa → presión negativa en OM (disfunción tubárica). Positiva leve → puede ser normal.
+**Gradiente (GR o TW)** | Ancho del pico medido a la mitad de la amplitud. Refleja el amortiguamiento del sistema: a más fricción, más ancho el pico. Pico estrecho → poco amortiguamiento. Pico ancho o ausente → mucho amortiguamiento (líquido).
+:::
+
+:::mnemonic id="mne-parametros"
+**Amplitud → cuanto sube el pico → movilidad total del sistema.**
+**TPP → donde esta el pico → presion del oido medio.**
+**Gradiente → que tan ancho es → amortiguamiento.**
+Para recordarlos juntos: ¿Cuanto? ¿Donde? ¿Que tan ancho?
+:::
+
+---
+
+:::diagram id="fig-timpanograma-parametros" title="Timpanograma tipo A con los tres parametros señalados"
+Curva timpanometrica en campana con amplitud, TPP y gradiente señalados con flechas y etiquetas.
+
+```svg
+<svg viewBox="0 0 500 285" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="atA" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="currentColor"/>
+    </marker>
+    <marker id="atAy" markerWidth="7" markerHeight="7" refX="3" refY="0" orient="auto">
+      <path d="M0,6 L6,6 L3,0 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect x="62" y="110" width="380" height="70" fill="currentColor" opacity="0.04"/>
+  <text x="446" y="126" font-size="8" fill="currentColor" opacity="0.5">rango normal</text>
+  <line x1="62" y1="230" x2="450" y2="230" stroke="currentColor" stroke-width="1.5" marker-end="url(#atA)"/>
+  <line x1="62" y1="230" x2="62"  y2="25"  stroke="currentColor" stroke-width="1.5" marker-end="url(#atAy)"/>
+  <text x="453" y="234" font-size="10" fill="currentColor">P (daPa)</text>
+  <text x="36"  y="24"  font-size="10" fill="currentColor">Y</text>
+  <line x1="100" y1="226" x2="100" y2="234" stroke="currentColor" stroke-width="1"/>
+  <text x="88"  y="244" font-size="8" fill="currentColor">-400</text>
+  <line x1="168" y1="226" x2="168" y2="234" stroke="currentColor" stroke-width="1"/>
+  <text x="156" y="244" font-size="8" fill="currentColor">-200</text>
+  <line x1="248" y1="226" x2="248" y2="234" stroke="currentColor" stroke-width="1"/>
+  <text x="242" y="244" font-size="8" fill="currentColor">0</text>
+  <line x1="318" y1="226" x2="318" y2="234" stroke="currentColor" stroke-width="1"/>
+  <text x="306" y="244" font-size="8" fill="currentColor">+200</text>
+  <line x1="58" y1="180" x2="66" y2="180" stroke="currentColor" stroke-width="1"/>
+  <text x="34" y="184" font-size="8" fill="currentColor">0.5</text>
+  <line x1="58" y1="135" x2="66" y2="135" stroke="currentColor" stroke-width="1"/>
+  <text x="34" y="139" font-size="8" fill="currentColor">1.0</text>
+  <line x1="58" y1="90"  x2="66" y2="90"  stroke="currentColor" stroke-width="1"/>
+  <text x="34" y="94"  font-size="8" fill="currentColor">1.5</text>
+  <path d="M80,224 C108,220 142,210 172,194 C200,178 222,155 240,120 C246,104 248,82 250,58 C252,82 254,104 260,120 C278,155 300,178 328,194 C356,210 392,220 422,224" stroke="currentColor" stroke-width="2.5" fill="none"/>
+  <circle cx="250" cy="58" r="4" fill="currentColor"/>
+  <line x1="408" y1="58"  x2="408" y2="224" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="403" y1="58"  x2="413" y2="58"  stroke="currentColor" stroke-width="1.5"/>
+  <line x1="403" y1="224" x2="413" y2="224" stroke="currentColor" stroke-width="1.5"/>
+  <text x="416" y="118" font-size="9" fill="currentColor" font-weight="bold">amplitud</text>
+  <text x="416" y="130" font-size="8" fill="currentColor" opacity="0.7">movilidad maxima</text>
+  <line x1="250" y1="58" x2="250" y2="230" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="208" y="50" font-size="9" fill="currentColor" font-weight="bold">TPP = 0 daPa</text>
+  <text x="196" y="62" font-size="8" fill="currentColor" opacity="0.7">presion del oido medio</text>
+  <line x1="62" y1="144" x2="450" y2="144" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2,4" opacity="0.25"/>
+  <line x1="210" y1="144" x2="290" y2="144" stroke="currentColor" stroke-width="2"/>
+  <line x1="210" y1="139" x2="210" y2="149" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="290" y1="139" x2="290" y2="149" stroke="currentColor" stroke-width="1.5"/>
+  <text x="250" y="136" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">gradiente</text>
+  <text x="250" y="165" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">amortiguamiento del sistema</text>
+  <text x="240" y="268" font-size="10" fill="currentColor" text-anchor="middle">Timpanograma tipo A — oido normal (226 Hz)</text>
+</svg>
+```
+:::
+
+---
+
+## 5.4 Cuatro formas, cuatro mecanismos
+
+Cada alteración de la forma del timpanograma corresponde a un cambio específico en los parámetros mecánicos. El estudiante que entiende la física puede predecir la forma antes de verla.
+
+:::diagram id="fig-timpanogramas-comparados" title="Cuatro formas de timpanograma y su mecanismo físico"
+Cuatro curvas en el mismo espacio: tipo A (normal), As (pico reducido, rigidez alta), Ad (pico alto, rigidez baja), tipo B (plano, amortiguamiento alto).
+
+```svg
+<svg viewBox="0 0 540 290" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="atc" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="currentColor"/>
+    </marker>
+    <marker id="atcy" markerWidth="7" markerHeight="7" refX="3" refY="0" orient="auto">
+      <path d="M0,6 L6,6 L3,0 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <line x1="55" y1="220" x2="440" y2="220" stroke="currentColor" stroke-width="1.5" marker-end="url(#atc)"/>
+  <line x1="55" y1="220" x2="55"  y2="18"  stroke="currentColor" stroke-width="1.5" marker-end="url(#atcy)"/>
+  <text x="443" y="224" font-size="10" fill="currentColor">P</text>
+  <text x="36"  y="17"  font-size="10" fill="currentColor">Y</text>
+  <text x="85"  y="233" font-size="8" fill="currentColor">-400</text>
+  <text x="155" y="233" font-size="8" fill="currentColor">-200</text>
+  <text x="228" y="233" font-size="8" fill="currentColor">0</text>
+  <text x="294" y="233" font-size="8" fill="currentColor">+200</text>
+  <line x1="230" y1="18" x2="230" y2="220" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2,4" opacity="0.2"/>
+  <path d="M70,214 C95,210 130,200 162,184 C185,172 205,152 220,124 C226,110 229,90 230,68 C231,90 234,110 240,124 C255,152 275,172 298,184 C330,200 365,210 390,214" stroke="currentColor" stroke-width="2.2" fill="none"/>
+  <text x="455" y="68" font-size="9" fill="currentColor">A normal</text>
+  <text x="455" y="80" font-size="8" fill="currentColor" opacity="0.6">k,m,R normales</text>
+  <line x1="390" y1="68" x2="452" y2="68" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <path d="M70,216 C100,214 138,208 170,198 C195,190 215,177 225,160 C228,152 230,142 230,134 C230,142 232,152 235,160 C245,177 265,190 290,198 C322,208 360,214 390,216" stroke="currentColor" stroke-width="2.2" fill="none" stroke-dasharray="7,3"/>
+  <text x="455" y="134" font-size="9" fill="currentColor">As k arriba</text>
+  <text x="455" y="146" font-size="8" fill="currentColor" opacity="0.6">otosclerosis</text>
+  <line x1="390" y1="134" x2="452" y2="134" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <path d="M70,214 C90,210 118,200 148,182 C170,168 192,144 210,104 C220,82 226,46 230,28 C234,46 240,82 250,104 C268,144 290,168 312,182 C342,200 370,210 390,214" stroke="currentColor" stroke-width="2.2" fill="none" stroke-dasharray="4,2"/>
+  <text x="455" y="28" font-size="9" fill="currentColor">Ad k abajo</text>
+  <text x="455" y="40" font-size="8" fill="currentColor" opacity="0.6">discontinuidad</text>
+  <line x1="390" y1="28" x2="452" y2="28" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <path d="M70,206 C110,204 160,202 200,201 C220,201 240,201 260,201 C300,201 350,202 390,204" stroke="currentColor" stroke-width="2.2" fill="none" stroke-dasharray="2,2"/>
+  <text x="455" y="201" font-size="9" fill="currentColor">B plano</text>
+  <text x="455" y="213" font-size="8" fill="currentColor" opacity="0.6">liquido / R alto</text>
+  <line x1="390" y1="201" x2="452" y2="201" stroke="currentColor" stroke-width="1" stroke-dasharray="2,3" opacity="0.5"/>
+  <line x1="60"  y1="256" x2="80"  y2="256" stroke="currentColor" stroke-width="2.2"/>
+  <text x="82"  y="260" font-size="8" fill="currentColor">A normal</text>
+  <line x1="148" y1="256" x2="168" y2="256" stroke="currentColor" stroke-width="2" stroke-dasharray="7,3"/>
+  <text x="170" y="260" font-size="8" fill="currentColor">As rigidez alta</text>
+  <line x1="260" y1="256" x2="280" y2="256" stroke="currentColor" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="282" y="260" font-size="8" fill="currentColor">Ad rigidez baja</text>
+  <line x1="370" y1="256" x2="390" y2="256" stroke="currentColor" stroke-width="2" stroke-dasharray="2,2"/>
+  <text x="392" y="260" font-size="8" fill="currentColor">B plano</text>
+  <text x="240" y="277" font-size="10" fill="currentColor" text-anchor="middle">226 Hz — cuatro configuraciones clinicas</text>
+</svg>
+```
+:::
+
+:::warning id="warn-B-no-es-cero"
+Tipo B no significa Y = 0. Significa que la curva es plana porque el sistema está tan amortiguado que no hay pico distinguible. Confundir tipo B con "admitancia cero" es un error frecuente: el oído todavía acepta algo de energía, pero no muestra resonancia.
+:::
+
+---
+
+## 5.5 El puente completo: de la física al diagnóstico
+
+:::diagram id="fig-puente-completo" title="Puente conceptual: fisica mecanica → admitancia → timpanograma → diagnostico"
+Diagrama de flujo en cuatro niveles verticales. Nivel 1: k, m, R. Nivel 2: B y G. Nivel 3: forma del timpanograma (amplitud, TPP, gradiente). Nivel 4: diagnostico probable.
+
+```svg
+<svg viewBox="0 0 540 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="apf" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect x="20"  y="15" width="145" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <rect x="195" y="15" width="145" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <rect x="370" y="15" width="145" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <text x="92"  y="32" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Rigidez k</text>
+  <text x="92"  y="46" font-size="9"  fill="currentColor" text-anchor="middle">Xs = k/omega</text>
+  <text x="92"  y="58" font-size="8"  fill="currentColor" text-anchor="middle" opacity="0.6">membrana, ligamentos</text>
+  <text x="267" y="32" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Masa m</text>
+  <text x="267" y="46" font-size="9"  fill="currentColor" text-anchor="middle">Xm = m·omega</text>
+  <text x="267" y="58" font-size="8"  fill="currentColor" text-anchor="middle" opacity="0.6">oseiculos, membrana</text>
+  <text x="442" y="32" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Resistencia R</text>
+  <text x="442" y="46" font-size="9"  fill="currentColor" text-anchor="middle">independiente de f</text>
+  <text x="442" y="58" font-size="8"  fill="currentColor" text-anchor="middle" opacity="0.6">articulaciones, tejido</text>
+  <line x1="92"  y1="67" x2="92"  y2="100" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <line x1="267" y1="67" x2="230" y2="100" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <line x1="442" y1="67" x2="400" y2="100" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <rect x="60"  y="103" width="160" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <rect x="300" y="103" width="160" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <text x="140" y="120" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Susceptancia B</text>
+  <text x="140" y="134" font-size="9"  fill="currentColor" text-anchor="middle">B+ rigidez domina</text>
+  <text x="140" y="146" font-size="9"  fill="currentColor" text-anchor="middle">B- masa domina</text>
+  <text x="380" y="120" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Conductancia G</text>
+  <text x="380" y="134" font-size="9"  fill="currentColor" text-anchor="middle">energia disipada</text>
+  <text x="380" y="146" font-size="9"  fill="currentColor" text-anchor="middle">amortiguamiento</text>
+  <line x1="140" y1="155" x2="200" y2="192" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <line x1="380" y1="155" x2="330" y2="192" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <rect x="140" y="195" width="240" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <text x="260" y="212" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Timpanograma</text>
+  <text x="260" y="226" font-size="9"  fill="currentColor" text-anchor="middle">amplitud — movilidad total</text>
+  <text x="260" y="238" font-size="9"  fill="currentColor" text-anchor="middle">TPP — presion OM   gradiente — amortiguamiento</text>
+  <line x1="200" y1="247" x2="150" y2="282" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <line x1="260" y1="247" x2="260" y2="282" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <line x1="320" y1="247" x2="370" y2="282" stroke="currentColor" stroke-width="1.5" marker-end="url(#apf)"/>
+  <rect x="58"  y="285" width="130" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <rect x="195" y="285" width="130" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <rect x="332" y="285" width="152" height="52" fill="none" stroke="currentColor" stroke-width="1.5" rx="4"/>
+  <text x="123" y="302" font-size="9"  fill="currentColor" text-anchor="middle" font-weight="bold">Tipo As</text>
+  <text x="123" y="316" font-size="8"  fill="currentColor" text-anchor="middle">amplitud baja</text>
+  <text x="123" y="328" font-size="8"  fill="currentColor" text-anchor="middle">otosclerosis</text>
+  <text x="260" y="302" font-size="9"  fill="currentColor" text-anchor="middle" font-weight="bold">Tipo B</text>
+  <text x="260" y="316" font-size="8"  fill="currentColor" text-anchor="middle">sin pico</text>
+  <text x="260" y="328" font-size="8"  fill="currentColor" text-anchor="middle">liquido / R alto</text>
+  <text x="408" y="302" font-size="9"  fill="currentColor" text-anchor="middle" font-weight="bold">Ad / hipercompliance</text>
+  <text x="408" y="316" font-size="8"  fill="currentColor" text-anchor="middle">amplitud alta</text>
+  <text x="408" y="328" font-size="8"  fill="currentColor" text-anchor="middle">discontinuidad / flacida</text>
+</svg>
+```
+:::
+
+Este puente es el mapa conceptual de la asignatura. Cada vez que leas un timpanograma lo recorrerás de arriba hacia abajo: ves una forma, infiere los parámetros de admitancia, deduce cuál componente mecánico está alterado y cuál es la patología probable.
+
+---
+
+:::question type="choice" id="q-partV-01"
+Un timpanograma muestra pico de amplitud normal pero TPP = −220 daPa. ¿Qué indica?
+
+= Presión negativa en el oído medio compatible con disfunción tubárica. El sistema es móvil (amplitud normal) pero está en equilibrio a una presión más baja que la atmosférica. # Correcto. El pico aparece a −220 daPa porque esa es la presión real del oído medio: la trompa no está igualando la presión atmosférica.
+~ Rigidez aumentada del sistema osicular. # La rigidez reduce la amplitud del pico, no desplaza su posición en el eje de presión.
+~ Líquido en el oído medio. # El líquido produce tipo B plano, no un pico desplazado con amplitud normal.
+~ Discontinuidad de cadena osicular. # La discontinuidad produce hipercompliance (amplitud alta), no desplazamiento del TPP.
+:::
+
+---
+
+:::question type="choice" id="q-partV-02"
+¿Qué representa físicamente el gradiente de un timpanograma?
+
+= El amortiguamiento del sistema: mayor resistencia R produce un pico más ancho porque la resonancia está más aplastada. # Correcto. Un sistema con mucha fricción tiene una curva de resonancia ancha. Un sistema poco amortiguado tiene resonancia afilada y pico estrecho.
+~ La frecuencia de resonancia f₀ del sistema. # f₀ determina dónde está el pico en el eje de frecuencia, no su ancho en el eje de presión.
+~ La presión del oído medio. # La presión del OM determina la posición del pico (TPP), no su ancho.
+~ La masa de los osículos. # La masa desplaza f₀, pero no determina directamente el ancho del pico en el timpanograma.
+:::
+
+---
+
+:::question type="open" id="q-partV-03"
+Explica por qué un timpanograma tipo B no significa que la admitancia sea cero, y qué proceso físico lo produce.
+
+= Tipo B significa que la curva de admitancia en función de la presión es plana y baja, pero no cero. El sistema sigue teniendo admitancia, solo que el amortiguamiento (R) es tan alto que aplana la resonancia: no hay una presión en particular donde el sistema sea significativamente más móvil. Físicamente, el alto amortiguamiento hace que la curva de |Y| vs. frecuencia pierda su pico definido. Al barrer la presión no se encuentra el punto de máxima movilidad porque el sistema nunca oscila libremente. El ejemplo típico es el líquido en oído medio: su viscosidad aporta una R tan grande que la resonancia desaparece del espectro clínico.
+
+---
+
+# Parte VI — Glosario técnico
+
+El glosario está organizado por grupos conceptuales, no en orden alfabético. Cada término aparece en el orden en que cobra sentido: primero la energía, luego la admitancia, luego los componentes mecánicos, luego los parámetros del instrumento.
+
+---
+
+## Grupo 1 — Energía y transferencia
+
+El punto de partida de todo: qué hace el sonido al llegar a una interfaz.
+
+:::definition id="glos-energia" multiple
+**Onda sonora** | Perturbación de presión que se propaga en un medio elástico. Lo que viaja es la perturbación, no las moléculas. Se caracteriza por compresiones (P > Patm) y rarefacciones (P < Patm).
+**Compresión** | Zona de la onda donde las moléculas están más juntas. Presión local mayor que la atmosférica. Corresponde al pico positivo de la curva sinusoidal.
+**Rarefacción** | Zona donde las moléculas están más separadas. Presión local menor que la atmosférica. Corresponde al valle negativo. Regla: el aire está "raro", escaso.
+**Presión barométrica (P₀)** | Presión estática del aire. Fondo sobre el que existe el sonido. ~101 325 Pa a nivel del mar. En timpanometría se manipula artificialmente en daPa para tensar o aflojar la membrana.
+**Presión sonora (p)** | Variación dinámica superpuesta sobre P₀. Oscila con la frecuencia del sonido. Se mide en Pa o en dB SPL. Es minúscula frente a P₀: una conversación normal produce ~0.02 Pa.
+**daPa (decaPascal)** | Unidad del barrido de presión timpanométrico. 1 daPa = 10 Pa. Rango clínico: de +200 a −400 daPa.
+**Reflectancia (R)** | Fracción de energía sonora incidente que se refleja en la interfaz. R = 1 → reflexión total. R = 0 → absorción total. Crece con el desajuste de impedancias.
+**Absorbancia (A)** | Fracción de energía que ingresa al sistema. A = 1 − R. Es lo que el timpanograma mide indirectamente.
+**Longitud de onda (λ)** | Distancia entre dos compresiones consecutivas. λ = c/f. A mayor frecuencia, menor λ. Determina si el sonido proyecta sombra acústica sobre un obstáculo.
+**Sombra acústica** | Zona de presión reducida detrás de un obstáculo cuyo tamaño supera λ. Las frecuencias altas proyectan sombra; las bajas difractan y la rodean.
+:::
+
+:::mnemonic id="mne-glos-grupo1"
+**Compresión → apretado → P sube.**
+**Rarefacción → raro → P baja.**
+**Reflectancia → lo que rebota. Absorbancia → lo que entra. R + A = 1 siempre.**
+**λ corta → sombra. λ larga → rodea.**
+:::
+
+---
+
+## Grupo 2 — Impedancia y admitancia
+
+El lenguaje central de la impedanciometría.
+
+:::definition id="glos-admitancia" multiple
+**Impedancia acústica (Z)** | Oposición al movimiento cuando el sistema recibe presión. Z = P/v. Unidades: rayl (Pa·s/m³). A mayor Z, mayor reflexión.
+**Admitancia acústica (Y)** | Facilidad con que el sistema acepta energía. Y = 1/Z. Unidades: mmho (milisiemens). A mayor Y, mayor absorción. Es lo que grafica el timpanograma.
+**Conductancia (G)** | Parte real de Y. Energía disipada de forma irreversible (fricción, calor). Siempre ≥ 0. Independiente de la frecuencia. Refleja el amortiguamiento del sistema.
+**Susceptancia (B)** | Parte imaginaria de Y. Energía almacenada temporalmente y devuelta. B > 0: domina rigidez. B < 0: domina masa. B = 0: resonancia.
+**Módulo de admitancia (|Y|)** | Magnitud total: |Y| = √(G² + B²). Lo que mide el timpanograma clásico de 226 Hz.
+**Reactancia (X)** | Parte imaginaria de la impedancia. Combina Xs y Xm. X > 0: domina rigidez. X < 0: domina masa. X = 0: resonancia.
+:::
+
+:::mnemonic id="mne-glos-grupo2"
+**Z → Zorra → cierra la puerta → se opone.**
+**Y → Yace abierto → deja pasar.**
+**G → Gasta → disipa → siempre positiva.**
+**B → Bipolar → puede ser + o − → depende de f vs f₀.**
+**|Y| solo → información incompleta. G y B juntos → diagnóstico.**
+:::
+
+---
+
+## Grupo 3 — Componentes mecánicos
+
+Los tres elementos que forman el modelo del oído medio.
+
+:::definition id="glos-mecanica" multiple
+**Rigidez (k)** | Propiedad elástica del sistema: capacidad de oponerse a la deformación y de recuperar la forma original. En el oído medio proviene de la membrana timpánica, los ligamentos osiculares y el colchón de aire. Produce reactancia de rigidez Xs.
+**Reactancia de rigidez (Xs)** | Xs = k/ω. Oposición elástica al movimiento. Decrece con la frecuencia: a más frecuencia, menos Xs. Domina a bajas frecuencias. Genera B positiva.
+**Masa (m)** | Propiedad inercial: la masa en reposo se resiste a moverse y la masa en movimiento se resiste a detenerse. En el oído medio son los osículos y la membrana. Produce reactancia de masa Xm.
+**Reactancia de masa (Xm)** | Xm = m·ω. Oposición inercial al movimiento. Crece con la frecuencia: a más frecuencia, más Xm. Domina a altas frecuencias. Genera B negativa.
+**Resistencia acústica (R)** | Oposición que disipa energía de forma irreversible por fricción y viscosidad. Independiente de la frecuencia. Proviene de articulaciones osiculares y tejidos blandos. Genera conductancia G.
+**Frecuencia de resonancia (f₀)** | Frecuencia a la que Xs = Xm → X = 0 → B = 0 → |Y| máximo. f₀ = 1/(2π)·√(k/m). En el oído medio normal: ~800–1000 Hz. Desplazada por patologías que alteran k o m.
+:::
+
+:::mnemonic id="mne-glos-grupo3"
+**Xs = k/ω → divide por ω → a más frecuencia, MENOS Xs → la rigidez "se ablanda".**
+**Xm = m·ω → multiplica por ω → a más frecuencia, MÁS Xm → la masa "se endurece".**
+**f₀ = √(k/m) → sube si sube k (más tenso), baja si sube m (más pesado). Columpio: cuerdas cortas = rápido, pasajero pesado = lento.**
+**R no cambia con f. Siempre está. Es la fricción base del sistema.**
+:::
+
+---
+
+## Grupo 4 — El instrumento y sus parámetros
+
+Lo que el clínico controla y lo que lee en pantalla.
+
+:::definition id="glos-instrumento" multiple
+**Tono sonda** | Frecuencia pura constante que emite el instrumento durante el barrido. Define qué parte del espectro se interroga. 226 Hz: zona de rigidez. 1000 Hz: zona de resonancia. 678 Hz: intermedia.
+**Barrido de presión** | Variación lenta de la presión estática del canal (de +200 a −400 daPa). Modifica la tensión de la membrana y desplaza temporalmente f₀, permitiendo encontrar el punto de máxima movilidad.
+**Timpanograma** | Gráfica de admitancia (Y, mmho) en función de la presión del canal (daPa). Cada punto de la curva es la admitancia del sistema a esa presión estática con el tono sonda activo.
+**Amplitud del pico (peak Y)** | Admitancia máxima registrada. Refleja la movilidad total del sistema en su estado óptimo. Normal a 226 Hz en adultos: 0.3–1.6 mmho. Alta → poca rigidez. Baja → rigidez alta o amortiguamiento alto.
+**TPP (Tympanometric Peak Pressure)** | Presión en daPa a la que ocurre el pico. Estima la presión real del oído medio. Normal: −100 a +50 daPa. Desplazado negativo → disfunción tubárica o presión negativa en OM.
+**Gradiente (TW)** | Ancho del pico medido a la mitad de la amplitud. Refleja el amortiguamiento R del sistema. Pico estrecho → poco amortiguamiento. Pico ancho o ausente → mucho amortiguamiento (tipo B).
+**Tipo A** | Timpanograma con pico de amplitud y TPP normales. Oído medio normal.
+**Tipo As** | Pico de amplitud reducida (s = shallow). Rigidez aumentada: otosclerosis, timpanoesclerosis, líquido leve.
+**Tipo Ad** | Pico de amplitud muy alta (d = deep/discontinuity). Rigidez reducida: discontinuidad osicular, membrana flácida. También llamado hipercompliance.
+**Tipo B** | Curva plana sin pico identificable. Amortiguamiento muy alto: líquido en oído medio, perforación con oído medio libre.
+**Tipo C** | Pico presente pero TPP muy negativo (< −100 daPa). Presión negativa en oído medio: disfunción tubárica.
+**Hipercompliance** | Admitancia máxima por encima del rango normal. Indica reducción de la rigidez del sistema. Signo de discontinuidad de cadena a 226 Hz.
+:::
+
+:::mnemonic id="mne-glos-grupo4"
+**Tipos de timpanograma:**
+**A → todo bien → Adecuado.**
+**As → pico chato → Sistema rígido (s = shallow = poco profundo).**
+**Ad → pico muy alto → Ancho, profundo, discontinuidad (d = deep).**
+**B → plano como una tabla → Bloqueado por líquido.**
+**C → pico desplazado → Canal de Eustaquio con problema (C = cerrado/negativo).**
+:::
+
+---
+
+:::diagram id="fig-glosario-visual" title="Cheat sheet visual: términos clave y sus relaciones"
+Diagrama resumen con dos columnas. Izquierda: cadena física (onda → interfaz → Z → Y = G+jB). Derecha: cadena mecánica (k → Xs → B+; m → Xm → B−; R → G). Centro: f₀ como punto de encuentro. Debajo: los cinco tipos de timpanograma en miniatura con su letra y causa.
+
+```svg
+<svg viewBox="0 0 540 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ach" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Títulos columnas -->
+  <text x="130" y="18" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Cadena energética</text>
+  <text x="410" y="18" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">Cadena mecánica</text>
+  <line x1="270" y1="10" x2="270" y2="290" stroke="currentColor" stroke-width="1" stroke-dasharray="3,4" opacity="0.3"/>
+
+  <!-- COLUMNA IZQUIERDA -->
+  <rect x="20"  y="25"  width="100" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="70"  y="38"  font-size="9" fill="currentColor" text-anchor="middle">onda sonora</text>
+  <text x="70"  y="48"  font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">compresión + rarefacción</text>
+  <line x1="70" y1="53" x2="70" y2="68" stroke="currentColor" stroke-width="1.2" marker-end="url(#ach)"/>
+
+  <rect x="20"  y="70"  width="100" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="70"  y="83"  font-size="9" fill="currentColor" text-anchor="middle">interfaz</text>
+  <text x="70"  y="93"  font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">reflectancia + absorbancia</text>
+  <line x1="70" y1="98" x2="70" y2="113" stroke="currentColor" stroke-width="1.2" marker-end="url(#ach)"/>
+
+  <rect x="20"  y="115" width="100" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="70"  y="128" font-size="9" fill="currentColor" text-anchor="middle">impedancia Z</text>
+  <text x="70"  y="138" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">Z = P/v</text>
+  <line x1="70" y1="143" x2="70" y2="158" stroke="currentColor" stroke-width="1.2" marker-end="url(#ach)"/>
+
+  <rect x="20"  y="160" width="100" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="70"  y="173" font-size="9" fill="currentColor" text-anchor="middle">admitancia Y</text>
+  <text x="70"  y="183" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">Y = 1/Z = G + jB</text>
+  <line x1="70" y1="188" x2="70" y2="203" stroke="currentColor" stroke-width="1.2" marker-end="url(#ach)"/>
+
+  <rect x="20"  y="205" width="100" height="38" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="70"  y="218" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">G y B</text>
+  <text x="70"  y="230" font-size="8" fill="currentColor" text-anchor="middle">G: disipa (fricción)</text>
+  <text x="70"  y="240" font-size="8" fill="currentColor" text-anchor="middle">B: almacena (±)</text>
+
+  <!-- COLUMNA DERECHA -->
+  <rect x="290" y="25"  width="240" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="385" y="38"  font-size="9" fill="currentColor" text-anchor="middle">Rigidez k → Xs = k/ω → B positiva</text>
+  <text x="385" y="48"  font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">membrana, ligamentos, aire OM — domina a bajas f</text>
+
+  <rect x="290" y="75"  width="240" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="385" y="88"  font-size="9" fill="currentColor" text-anchor="middle">Masa m → Xm = m·ω → B negativa</text>
+  <text x="385" y="98"  font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">osículos, membrana — domina a altas f</text>
+
+  <rect x="290" y="125" width="240" height="28" fill="none" stroke="currentColor" stroke-width="1.2" rx="3"/>
+  <text x="385" y="138" font-size="9" fill="currentColor" text-anchor="middle">Resistencia R → G (disipación)</text>
+  <text x="385" y="148" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">articulaciones, viscosidad — independiente de f</text>
+
+  <!-- f₀ en el centro -->
+  <rect x="175" y="170" width="190" height="40" fill="none" stroke="currentColor" stroke-width="2" rx="5"/>
+  <text x="270" y="186" font-size="11" fill="currentColor" text-anchor="middle" font-weight="bold">f₀ = 1/(2π)·√(k/m)</text>
+  <text x="270" y="200" font-size="9"  fill="currentColor" text-anchor="middle">Xs = Xm → B = 0 → |Y| máximo</text>
+  <line x1="70"  y1="243" x2="175" y2="185" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="385" y1="153" x2="340" y2="170" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+
+  <!-- SECCIÓN TIMPANOGRAMAS miniatura -->
+  <line x1="20" y1="228" x2="520" y2="228" stroke="currentColor" stroke-width="1" stroke-dasharray="3,4" opacity="0.3"/>
+  <text x="270" y="242" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Tipos de timpanograma</text>
+
+  <!-- A normal -->
+  <text x="60"  y="260" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">A</text>
+  <path d="M35,285 C42,284 50,280 55,270 C58,265 60,257 60,252 C60,257 62,265 65,270 C70,280 78,284 85,285" stroke="currentColor" stroke-width="1.8" fill="none"/>
+  <text x="60"  y="298" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">normal</text>
+
+  <!-- As -->
+  <text x="165" y="260" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">As</text>
+  <path d="M138,285 C148,284 158,282 162,277 C164,274 165,270 165,267 C165,270 166,274 168,277 C172,282 182,284 192,285" stroke="currentColor" stroke-width="1.8" fill="none" stroke-dasharray="5,2"/>
+  <text x="165" y="298" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">rigidez alta</text>
+
+  <!-- Ad -->
+  <text x="270" y="260" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Ad</text>
+  <path d="M245,285 C250,283 257,278 262,265 C265,258 268,248 270,242 C272,248 275,258 278,265 C283,278 290,283 295,285" stroke="currentColor" stroke-width="1.8" fill="none" stroke-dasharray="3,2"/>
+  <text x="270" y="298" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">rigidez baja</text>
+
+  <!-- B -->
+  <text x="375" y="260" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">B</text>
+  <path d="M345,280 C360,279 380,279 390,279 C400,279 415,280 420,280" stroke="currentColor" stroke-width="1.8" fill="none" stroke-dasharray="2,2"/>
+  <text x="382" y="298" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">plano / liquido</text>
+
+  <!-- C -->
+  <text x="490" y="260" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">C</text>
+  <path d="M455,285 C462,284 470,280 475,270 C478,264 480,256 480,251 C480,256 482,264 485,270 C490,280 498,284 510,285" stroke="currentColor" stroke-width="1.8" fill="none"/>
+  <text x="483" y="298" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">TPP negativo</text>
+
+  <!-- Etiqueta tipos -->
+  <text x="270" y="320" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.5">A = normal   As = rigido   Ad = flacido   B = plano   C = presion negativa OM</text>
+</svg>
+```
+:::
+
+---
+
+:::summary id="resumen-final"
+- El sonido es dispersión de energía en forma de variaciones de presión (compresiones y rarefacciones) sobre el fondo de la presión barométrica. Lo que el timpanómetro manipula en el barrido es esa presión barométrica, no el sonido.
+- La energía que llega a la membrana timpánica se divide en reflejada (reflectancia R) y absorbida (absorbancia A). La admitancia Y mide la facilidad de absorción: Y = 1/Z.
+- La admitancia se descompone en m{Y = G + jB}. G mide disipación (siempre positiva, independiente de f). B mide almacenamiento reactivo: positiva cuando domina rigidez, negativa cuando domina masa, cero en resonancia.
+- El oído medio tiene tres componentes mecánicos: rigidez k (genera Xs = k/ω, domina a bajas f), masa m (genera Xm = m·ω, domina a altas f), resistencia R (genera G, independiente de f).
+- La frecuencia de resonancia f₀ = 1/(2π)·√(k/m) ≈ 800–1000 Hz en el oído normal. Cualquier patología que altere k o m desplaza f₀. La sonda de 226 Hz interroga la zona de rigidez; la de 1000 Hz interroga la zona de resonancia.
+- El timpanograma grafica Y en función de la presión del canal. Sus tres parámetros son: amplitud (movilidad total), TPP (presión del oído medio) y gradiente (amortiguamiento). Los tipos A, As, Ad, B y C describen las configuraciones clínicas más frecuentes.
+- El análisis B/G por separado (especialmente a 1000 Hz) permite diagnósticos que el módulo |Y| solo no puede revelar, como la discontinuidad de cadena osicular.
+:::
+
+---
+
+:::question type="choice" id="q-glos-01"
+¿Cuál de los siguientes términos describe la energía que el sistema del oído medio almacena temporalmente y luego devuelve?
+
+= Susceptancia B. # Correcto. B es la parte imaginaria de la admitancia y representa la energía almacenada reactivamente: por rigidez (B+) o por masa (B−).
+~ Conductancia G. # G representa la energía disipada irreversiblemente, no la almacenada.
+~ Resistencia R. # R es la oposición que disipa energía, equivalente en la impedancia a lo que G hace en la admitancia.
+~ Reflectancia. # La reflectancia es la fracción de energía que no entra al sistema, no la que se almacena dentro de él.
+:::
+
+---
+
+:::question type="choice" id="q-glos-02"
+Un oído tiene tipo C en el timpanograma de 226 Hz. ¿Qué parámetro está alterado y qué indica?
+
+= El TPP está desplazado negativamente, indicando presión negativa en el oído medio por disfunción de la trompa de Eustaquio. # Correcto. Tipo C se define por un pico presente (amplitud normal o reducida) pero con TPP más negativo de −100 daPa.
+~ La amplitud del pico está reducida, indicando rigidez aumentada. # Eso sería tipo As, no tipo C.
+~ La curva está plana, indicando líquido. # Eso sería tipo B.
+~ La amplitud del pico es muy alta, indicando discontinuidad. # Eso sería tipo Ad o hipercompliance.
+:::
+
+---
+
+:::question type="true-false" id="q-glos-03"
+La conductancia G puede ser negativa si el sistema tiene más masa que rigidez.
+
+= false # G es siempre positiva o cero. La energía disipada no puede ser negativa. Lo que cambia de signo con la relación masa/rigidez es la susceptancia B, no G.
+:::
+
+---
+
+:::reference
+- Shanks JE, Shohet J. *Tympanometry in Clinical Practice*. En: Katz J, ed. *Handbook of Clinical Audiology*. 7th ed. Wolters Kluwer; 2015.
+- Margolis RH, Hunter LL. *Acoustic Immittance Measurements*. En: Roeser RJ, Valente M, Hosford-Dunn H, eds. *Audiology Diagnosis*. Thieme; 2000.
+- Feeney MP, Sanford CA. Age effects in the human middle ear: Wideband acoustical admittance. *J Acoust Soc Am*. 2004;116(6):3546–3558.
+- Voss SE, Allen JB. Measurement of acoustic impedance and reflectance in the human ear canal. *J Acoust Soc Am*. 1994;95(1):372–384.
+:::
